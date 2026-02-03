@@ -4,3 +4,11 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 12 pt;
 }
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.centered-text {
+    text-align: center;
+}
