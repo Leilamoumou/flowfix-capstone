@@ -6,7 +6,9 @@ Flowfix is for you! Our AI-powered tool is designed to connect those on either e
 It's best suited for homeowners, renters, landlords, and other realtors and property managers.
 
 
-### Software Layered Architecture
-  1. Presentation Layer: React & HTML/CSS/JS frontend for webapps
-  2. API Layer: TBD
-  3.
+### System Architecture Layers
+1. **Presentation Layer**: React & HTML/CSS/JS frontend for webapps
+2. **Backend API Layer**: Node.js
+3. **External AI API Layer**: TBD
+4. **Data Access Layer**: via Node.js using an ORM/ODM 
+5. **Database Layer**: TBD, likely MongoDB
