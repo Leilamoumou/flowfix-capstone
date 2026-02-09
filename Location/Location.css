@@ -26,6 +26,7 @@ h1 {
     position: relative;
 }
 
+/* Styling for the Hero Text */
 .hero-text {
     color: bisque;
     position: absolute;
@@ -41,7 +42,7 @@ h1 {
     font-size: 3vw;
 }
 
-/* Hero Text */
+/* NYC Hero Text */
 .bottom-right {
     top: 75%;
     left: 70%;
