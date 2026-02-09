@@ -30,6 +30,7 @@ h1 {
     color: bisque;
     position: absolute;
     font-weight: bold;
+    text-shadow: 4px 4px 4px brown;
 }
 
 /* FlowFix Location Hero Text */
