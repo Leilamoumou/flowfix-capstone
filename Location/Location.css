@@ -32,10 +32,19 @@ h1 {
     font-weight: bold;
 }
 
-/* FlowFix Location Text */
+/* FlowFix Location Hero Text */
 .top-left {
     top: 25%;
     left: 19%;
     transform: translate(-50%, -50%);
     font-size: 3vw;
+}
+
+/* Hero Text */
+.bottom-right {
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+    text-align: center;
 }
