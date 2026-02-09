@@ -50,3 +50,42 @@ h1 {
     font-size: 3vw;
     text-align: center;
 }
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(182, 166, 154);
+    margin: 0px;
+    font-size: 20pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: bisque;
+    text-shadow: 4px 4px 4px brown;
+    
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 50px;
+    background-color: rgb(182, 166, 154);
+    flex-grow: 1;
+    /* border-top: 5px solid tan; */
+    /* border-bottom: 4px solid tan; */
+    
+}
+
+.divider::before {
+    margin-right: var(divider-gap, 10px);
+}
+
+.divider::after {
+    margin-left: var(divider-gap, 10px);
+}
+
+.divider span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
