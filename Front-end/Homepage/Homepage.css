@@ -1,0 +1,28 @@
+/*  Homepage CSS, will be kept simple until UI design is implemented/*/
+
+
+body{
+     font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #321be2;
+}
+/* Headers + Nav */
+.main-header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    top: 0;
+    z-index: 100;
+}
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
