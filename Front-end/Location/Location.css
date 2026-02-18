@@ -62,8 +62,7 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     color: bisque;
-    text-shadow: 4px 4px 4px brown;
-    
+    text-shadow: 4px 4px 4px brown;    
 }
 
 .divider::before,
@@ -88,4 +87,51 @@ h1 {
 .divider span {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Social Media Links */
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+
+/* Business Hours */
+.footer-hours {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-social,
+    .footer-hours {
+        margin: 10px 0;
+    }
 }
