@@ -91,11 +91,11 @@ h1 {
 
 /* Footer Styles */
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: lightgray;
+    color: black;
     padding: 20px 0;
     text-align: center;
-    margin-top: px;
+    margin-top: 3px;
 }
 
 .footer-container {
@@ -107,7 +107,7 @@ h1 {
 
 /* Social Media Links */
 .footer-social a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bold;
     margin: 0 10px;
@@ -115,7 +115,7 @@ h1 {
 }
 
 .footer-social a:hover {
-    color: #ffcc00; /* Highlight color on hover */
+    color: brown; /* Highlight color on hover */
 }
 
 /* Business Hours */
