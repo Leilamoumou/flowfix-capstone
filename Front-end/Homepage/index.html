@@ -9,10 +9,9 @@
 <body>
 
  <!-- Navigation Header -->
-
     <header class="main-header">
         <div class="container">
-            <div class="nav-wrapper">
+              <div class="nav-wrapper">
                 <div class="logo">
                     <h1>FlowFix</h1>
                 </div>
@@ -24,9 +23,54 @@
                     <a href="Location.html">Locations</a>
                     <a href="#FAQ">FAQ</a>
                     <a href="#contact" class="cta-nav">Get Started</a>
+                    <button class="btn theme-toggle" id="themeToggle">Dark Mode</button>
                 </nav>
+            </div> 
+        </div>     
+    </header>       
+            
+           <!---- Sections to toggle through --->  
+    <section>
+     <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+        <h3>Emergency Plumbing</h3>
+                <p>Connect with those best suited for your plumbing needs here, and save yourself the stress of other platforms' costs!</p>
+                <a href="#Emergency-Plumbing">Get your flow fixed here.</a>
+            </div>
+            <div class="service-card">
+                <h3>General Maintenance</h3>
+                <p>Schedule checkups to ensure your plumbing is running smoothly all year round.</p>
+                <a href="#Maintenance-Check">Learn More</a> 
+            </div>
+            <div class="service-card">
+                <h3>Got Questions?</h3>
+                <p>Installation, repair, and replacement of all water heater types.</p>
+                <a href="#FAQ">Learn More</a>
             </div>
         </div>
-    </header>
+        </section>
+          <!-- END OF SERVICE CARDS-->
+
+           <!-- CHAT BUBBLE FEATURE, for prototype, ZERO FUNCTIONALITY
+            @TODO: implement functionality once API && BACKEND is implemented + connected. -->
+        <div>
+        <div class="chat-bubble" id="chatBubble">💬</div>
+<div class="chat-window" id="chatWindow" style="display:none;">
+    <div class="chat-header">
+        <span>FlowFix Assistant</span>
+        <button id="closeChat">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Describe your issue..."/>
+        <button id="chatSend">Send</button>
+    </div>
+     <!-- END OF CHAT BUBBLE FEATURE-->
+</div>
+</div> 
+</body>
+</html>
+
 
     

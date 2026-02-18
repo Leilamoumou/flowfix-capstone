@@ -28,3 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+//Dark mode Toggle function
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', function() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    this.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+});
