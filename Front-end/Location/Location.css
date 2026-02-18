@@ -1,0 +1,91 @@
+/* CSS for Location Webpage */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12 pt;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+/* Pipes Hero Image */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
+    url("location-hero-img.png");
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Styling for the Hero Text */
+.hero-text {
+    color: bisque;
+    position: absolute;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px brown;
+}
+
+/* FlowFix Location Hero Text */
+.top-left {
+    top: 25%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+}
+
+/* NYC Hero Text */
+.bottom-right {
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+    text-align: center;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(182, 166, 154);
+    margin: 0px;
+    font-size: 20pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: bisque;
+    text-shadow: 4px 4px 4px brown;
+    
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 50px;
+    background-color: rgb(182, 166, 154);
+    flex-grow: 1;
+    /* border-top: 5px solid tan; */
+    /* border-bottom: 4px solid tan; */
+    
+}
+
+.divider::before {
+    margin-right: var(divider-gap, 10px);
+}
+
+.divider::after {
+    margin-left: var(divider-gap, 10px);
+}
+
+.divider span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
