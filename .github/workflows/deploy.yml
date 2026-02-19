@@ -5,11 +5,16 @@ on:
     branches:
       - main
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
 jobs:
   deploy:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,4 +24,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
-          branch: main
+          branch: gh-pages
