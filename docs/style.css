@@ -1,93 +1,122 @@
 /*  Homepage CSS, will be kept simple until UI design is implemented/*/
 
-
-body{
-     font-family: 'Times New Roman', Times, serif;
-    line-height: 1.6;
-    color: #321be2;
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
+  color: #321be2;
 }
 /* Headers + Nav */
 .main-header {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    top: 0;
-    z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 100;
 }
 .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* Buttons */
 .btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 /*dark mode toggle */
 [data-theme="dark"] body {
-    background: #121212;
-    color: #f0f0f0;
+  background: #121212;
+  color: #f0f0f0;
 }
 [data-theme="dark"] .main-header {
-    background: #1e1e1e;
+  background: #1e1e1e;
 }
 /* SERVICES GRID STYLE */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 .service-card {
-    padding: 1.5rem;
-    border: 1px solid #731919;
-    border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #731919;
+  border-radius: 8px;
 }
 /* Chatbot style, will implement functionality later in js */
 .chat-bubble {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #321be2;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 999;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #321be2;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
 }
 .chat-window {
-    position: fixed;
-    bottom: 5rem;
-    right: 2rem;
-    width: 320px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    z-index: 999;
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  width: 320px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(230, 0, 0, 0.625);
+  z-index: 999;
 }
 .chat-header {
-    background: #321be2;
-    color: rgb(255, 243, 243);
-    padding: 1rem;
-    border-radius: 12px 12px 0 0;
-    display: flex;
-    justify-content: space-between;
+  background: #321be2;
+  color: rgb(255, 243, 243);
+  padding: 1rem;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
 }
 .chat-messages {
-    height: 250px;
-    overflow-y: auto;
-    padding: 1rem;
+  height: 250px;
+  overflow-y: auto;
+  padding: 1rem;
 }
 .chat-input-row {
+  display: flex;
+  padding: 0.75rem;
+  gap: 0.5rem;
+  border-top: 1px solid #991919;
+}
+/* hamborg styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #860000;
+  border-radius: 3px;
+}
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    padding: 0.75rem;
-    gap: 0.5rem;
-    border-top: 1px solid #991919;
+  }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-nav.open {
+    display: flex;
+  }
 }
