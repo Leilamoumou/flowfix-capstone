@@ -1,83 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlowFix - Where All Your Problems Flow Away</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-
-<body>
-
- <!-- Navigation Header -->
+  <body>
+    <!-- Navigation Header -->
     <header class="main-header">
-        <div class="container">
-              <div class="nav-wrapper">
-                <div class="logo">
-                    <h1>FlowFix</h1>
-                </div>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                     <span></span>
-                        <span></span>
-                         <span></span>
-            </button>
-                <nav class="main-nav">
-                    <a href="login.html"><button class="btn">Login</button></a>
-                    <a href="#Emergency-Plumbing"><button class="btn">Emergency Plumbing</button></a>
-                    <a href="#Maintenance-Check"><button class="btn">General Maintenance Check</button></a>
-                    <a href="#pricing"><button class="btn">Pricing</button></a>
-                    <a href="Location/Location.html" ><button class="btn">Location</button> </a>
-                    <a href="FAQ/FAQ.html" ><button class="btn">FAQ</button> </a>
-                    <a href="#contact" class="cta-nav">C<button class="btn">Contact</button></a>
-                    <button class="btn theme-toggle" id="themeToggle">Dark Mode</button>
-                </nav>
-            </div> 
-        </div>     
-    </header>       
-            
-           <!---- Sections to toggle through --->  
-    <section id="Emergency-Plumbing">
-     <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-        <h3>Emergency Plumbing</h3>
-                <p>Connect with those best suited for your plumbing needs here, and save yourself the stress of other platforms' costs!</p>
-                <a href="#Emergency-Plumbing">Get your flow fixed here.</a>
-            </div>
-            <div class="service-card" id="Maintenance-Check">
-                <h3>General Maintenance</h3>
-                <p>Schedule checkups to ensure your plumbing is running smoothly all year round.</p>
-                <a href="#Maintenance-Check">Learn More</a> 
-            </div>
-            <div class="service-card">
-                <h3>Got Questions?</h3>
-                <p>Browse our FAQ for answers to common plumbing questions and how our services work.</p>
-                <a href="FAQ/FAQ.html">Learn More</a>
-            </div>
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <h1>FlowFix</h1>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="main-nav">
+            <a href="login.html" class="btn">Login</a>
+            <a href="#Emergency-Plumbing" class="btn">Emergency Plumbing</a>
+            <a href="#Maintenance-Check" class="btn"
+              >General Maintenance Check</a
+            >
+            <a href="#pricing" class="btn">Pricing</a>
+            <a href="Location/Location.html" class="btn">Location</a>
+            <a href="FAQ/FAQ.html" class="btn">FAQ</a>
+            <a href="#contact" class="btn cta-nav">Contact</a>
+            <button class="btn theme-toggle" id="themeToggle">Dark Mode</button>
+          </nav>
         </div>
-        </section>
-          <!-- END OF SERVICE CARDS-->
+      </div>
+    </header>
 
-           <!-- CHAT BUBBLE FEATURE, for prototype, ZERO FUNCTIONALITY
+    <!---- Sections to toggle through --->
+    <section id="Emergency-Plumbing">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Emergency Plumbing</h3>
+          <p>
+            Connect with those best suited for your plumbing needs here, and
+            save yourself the stress of other platforms' costs!
+          </p>
+          <a href="#Emergency-Plumbing">Get your flow fixed here.</a>
+        </div>
+        <div class="service-card" id="Maintenance-Check">
+          <h3>General Maintenance</h3>
+          <p>
+            Schedule checkups to ensure your plumbing is running smoothly all
+            year round.
+          </p>
+          <a href="#Maintenance-Check">Learn More</a>
+        </div>
+        <div class="service-card">
+          <h3>Got Questions?</h3>
+          <p>
+            Browse our FAQ for answers to common plumbing questions and how our
+            services work.
+          </p>
+          <a href="FAQ/FAQ.html">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <!-- END OF SERVICE CARDS-->
+
+    <!-- CHAT BUBBLE FEATURE, for prototype, ZERO FUNCTIONALITY
             @TODO: implement full-functionality once API && BACKEND is implemented + connected. Just opens and closes for now! -->
-        <div>
-            
-        <div class="chat-bubble" id="chat_bubble">💬</div>
-<div class="chat-window" id="chat_window" style="display:none;">
-    <div class="chat-header">
-        <span>FlowFix Assistant</span>
-        <button id="close_chat">✕</button>
+    <div>
+      <div class="chat-bubble" id="chat_bubble">💬</div>
+      <div class="chat-window" id="chat_window" style="display: none">
+        <div class="chat-header">
+          <span>FlowFix Assistant</span>
+          <button id="close_chat">✕</button>
+        </div>
+        <div class="chat-messages" id="chat_messages"></div>
+        <div class="chat-input-row">
+          <input
+            type="text"
+            id="chat_input"
+            placeholder="Describe your issue here, and we will connect you shortly!*"
+          />
+          <button id="chat_send">Send</button>
+        </div>
+        <!-- END OF CHAT BUBBLE FEATURE-->
+      </div>
     </div>
-    <div class="chat-messages" id="chat_messages"></div>
-    <div class="chat-input-row">
-        <input type="text" id="chat_input" placeholder="Describe your issue here, and we will connect you shortly!*"/>
-        <button id="chat_send">Send</button>
-   
-   </div>
-     <!-- END OF CHAT BUBBLE FEATURE-->
-</div> 
-</div>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
