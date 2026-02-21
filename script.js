@@ -48,7 +48,7 @@ if (close_chat && chat_window){
         chat_window.style.display = 'none';
     });
 
-Dark mode Toggle function, actual implementation still needed
+//Dark mode Toggle function, actual implementation still needed
 const themeToggle = document.getElementById('themeToggle');
 themeToggle.addEventListener('click', function() {
     const html = document.documentElement;
