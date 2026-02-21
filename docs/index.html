@@ -18,7 +18,7 @@
                     <h1>FlowFix</h1>
                 </div>
                 <nav class="main-nav">
-                    <a href="#login">Login</a>
+                    <a href="login.html">Login</a>
                     <a href="#Emergency-Plumbing">Emergency Plumbing</a>
                     <a href="#Maintenance-Check">General Maintenance Check</a>
                     <a href="#pricing">Pricing</a>
@@ -32,7 +32,7 @@
     </header>       
             
            <!---- Sections to toggle through --->  
-    <section>
+    <section id="Emergency-Plumbing">
      <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
@@ -40,14 +40,14 @@
                 <p>Connect with those best suited for your plumbing needs here, and save yourself the stress of other platforms' costs!</p>
                 <a href="#Emergency-Plumbing">Get your flow fixed here.</a>
             </div>
-            <div class="service-card">
+            <div class="service-card" id="Maintenance-Check">
                 <h3>General Maintenance</h3>
                 <p>Schedule checkups to ensure your plumbing is running smoothly all year round.</p>
                 <a href="#Maintenance-Check">Learn More</a> 
             </div>
             <div class="service-card">
                 <h3>Got Questions?</h3>
-                <p>Installation, repair, and replacement of all water heater types.</p>
+                <p>Browse our FAQ for answers to common plumbing questions and service details.</p>
                 <a href="FAQ/FAQ.html">Learn More</a>
             </div>
         </div>
@@ -57,6 +57,7 @@
            <!-- CHAT BUBBLE FEATURE, for prototype, ZERO FUNCTIONALITY
             @TODO: implement full-functionality once API && BACKEND is implemented + connected. Just opens and closes for now! -->
         <div>
+            
         <div class="chat-bubble" id="chat_bubble">💬</div>
 <div class="chat-window" id="chat_window" style="display:none;">
     <div class="chat-header">
@@ -72,10 +73,6 @@
      <!-- END OF CHAT BUBBLE FEATURE-->
 </div> 
 </div>
-</div> 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-    
