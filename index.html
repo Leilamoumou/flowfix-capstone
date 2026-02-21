@@ -6,7 +6,7 @@
     <title>FlowFix - Where All Your Problems Flow Away</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script src="script.js"></script>
+
 
 <body>
 
@@ -22,9 +22,9 @@
                     <a href="#Emergency-Plumbing">Emergency Plumbing</a>
                     <a href="#Maintenance-Check">General Maintenance Check</a>
                     <a href="#pricing">Pricing</a>
-                    <a href="../docs/Location/Location.html">Locations</a>
-                    <a href="../docs/FAQ/FAQ.html">FAQ</a>
-                    <a href="#contact" class="cta-nav">Get Started</a>
+                    <button class="btn" data-href="login.html">Get Started</button>
+                    <button class="btn" data-href="FAQ.html">FAQ</button>
+                    <a href="#contact" class="cta-nav">Contact</a>
                     <button class="btn theme-toggle" id="themeToggle">Dark Mode</button>
                 </nav>
             </div> 
@@ -48,14 +48,14 @@
             <div class="service-card">
                 <h3>Got Questions?</h3>
                 <p>Installation, repair, and replacement of all water heater types.</p>
-                <a href="#FAQ">Learn More</a>
+                <a href=../docs/FAQ/FAQ.html>Learn More</a>
             </div>
         </div>
         </section>
           <!-- END OF SERVICE CARDS-->
 
            <!-- CHAT BUBBLE FEATURE, for prototype, ZERO FUNCTIONALITY
-            @TODO: implement functionality once API && BACKEND is implemented + connected. -->
+            @TODO: implement full-functionality once API && BACKEND is implemented + connected. Just opens and closes for now! -->
         <div>
         <div class="chat-bubble" id="chatBubble">💬</div>
 <div class="chat-window" id="chatWindow" style="display:none;">
@@ -65,13 +65,15 @@
     </div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input-row">
-        <input type="text" id="chatInput" placeholder="Describe your issue here and we will connect you shortly!*"/>
+        <input type="text" id="chatInput" placeholder="Describe your issue here, and we will connect you shortly!*"/>
         <button id="chatSend">Send</button>
    
+   </div>
      <!-- END OF CHAT BUBBLE FEATURE-->
 </div> 
 </div>
 </div> 
+<script src="script.js"></script>
 </body>
 </html>
 
