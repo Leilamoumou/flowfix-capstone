@@ -91,7 +91,8 @@ h1 {
 
 /* Footer Styles */
 .footer {
-    background-color: lightgray;
+    /* background-color: lightgray; */
+    background-image: linear-gradient(to bottom, white, tan);
     color: black;
     padding: 20px 0;
     text-align: center;
@@ -135,3 +136,19 @@ h1 {
         margin: 10px 0;
     }
 }
+
+/* Location Navigation Bar */
+.location-nav {
+    overflow: hidden;
+    background-color: rgb(182, 166, 154);
+}
+
+.location-nav a {
+    float: right;
+    color:brown;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
