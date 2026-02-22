@@ -56,13 +56,44 @@ if (close_chat && chat_window) {
     chat_window.style.display = "none";
   });
 }
+
 //Dark mode Toggle function, actual implementation still needed
+// const themeToggle = document.getElementById("themeToggle");
+// if (themeToggle) {
+//   themeToggle.addEventListener("click", function () {
+//     const html = document.documentElement;
+//     const isDark = html.getAttribute("data-theme") === "dark";
+//     html.setAttribute("data-theme", isDark ? "light" : "dark");
+//     this.textContent = isDark ? "Dark Mode" : "Light Mode";
+//   });
+// }
+
+//Dark Mode Toggle Function with Icon Swapping
 const themeToggle = document.getElementById("themeToggle");
-if (themeToggle) {
-  themeToggle.addEventListener("click", function () {
+
+if (themeToggle)
+{
+  themeToggle.addEventListener("click", function()
+  {
     const html = document.documentElement;
+    const themeIcon = this.querySelector("img");
+
+    // Checks if webpage is currently in Dark Mode
     const isDark = html.getAttribute("data-theme") === "dark";
-    html.setAttribute("data-theme", isDark ? "light" : "dark");
-    this.textContent = isDark ? "Dark Mode" : "Light Mode";
+
+    if (isDark)
+    {
+      // If webpage is in dark mode, switch to light mode
+      html.setAttribute("data-theme", "light");
+      themeIcon.src = "dark-mode.png";
+      themeIcon.alt = "Switch to Dark Mode"; // Alternative Text for greater accessibility
+    }
+    else
+    {
+      // If webpage is in light mode, switch to dark mode
+      html.setAttribute("data-theme", "dark");
+      themeIcon.src = "light-mode.png";
+      themeIcon.alt = "Switch to Light Mode"; // Alternative Text for greater accessibility
+    }
   });
 }
