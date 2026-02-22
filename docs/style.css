@@ -120,3 +120,29 @@ body {
     display: flex;
   }
 }
+
+/* Light/Dark Mode Theme Toggle Button Styling */
+.btn.theme-toggle {
+  background: none;
+  border:none;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: none;
+} 
+
+/* Hovering over the Light/Dark mode toggle button will slightly enlarge the icon */
+.btn.theme-toggle:hover {
+  transform: scale(1.1);
+  background: transparent;
+}
+
+/* Styling for the Icon */
+.btn.theme-toggle img{
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
