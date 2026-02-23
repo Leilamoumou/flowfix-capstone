@@ -9,7 +9,7 @@ body {
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  text-align: left;
+  text-align: center;
   border: none;
   outline: none;
   transition: 0.4s;
@@ -39,6 +39,9 @@ body {
   backface-visibility: hidden;
 }
 
+h2 {
+  text-align: center;
+}
 /* Stying for h2 on hover */
 h2:hover {
   color: blue; /* Changes the text color to blue */
@@ -56,4 +59,69 @@ h2:hover .faq-emoji {
 /* Styling for the p tag */
 p {
   font-size: 16px;
+}
+
+/* Styling for the buttons
+.expand, .collapse {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.expand {
+  background-color: #a9c0e4;
+  cursor: pointer;
+}
+
+.collapse {
+  background-color: #e8bf9b;
+  cursor: pointer;
+} */
+
+.expand {
+  align-items: center;
+  appearance: none;
+  background-color: #ccd3eb;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #536DFE;
+  box-shadow: rgba(83, 109, 254, 0.2) 0 2px 4px, rgba(83, 109, 254, 0.15) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #536DFE;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Times New Roman', Times, serif;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 15px;
+}
+
+.expand:focus {
+  outline: none;
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(83, 109, 254, 0.4) 0 2px 4px, rgba(83, 109, 254, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.expand:hover {
+  box-shadow: rgba(83, 109, 254, 0.3) 0 4px 8px, rgba(83, 109, 254, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.expand:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
