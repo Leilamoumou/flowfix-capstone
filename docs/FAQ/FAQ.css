@@ -25,3 +25,7 @@
   overflow: hidden;
 }
 
+/* Styling for the Emojis */
+.faq-emoji {
+    padding: 5px;
+}
