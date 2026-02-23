@@ -52,3 +52,8 @@ h2:hover .faq-emoji {
   /* Dark blue shadow */
   filter: drop-shadow(0 4px 6px rgba(50, 27, 226, 0.4));
 }
+
+/* Styling for the p tag */
+p {
+  font-size: 16px;
+}
