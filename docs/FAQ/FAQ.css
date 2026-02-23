@@ -1,3 +1,7 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
   background-color: #eee;
@@ -10,6 +14,7 @@
   outline: none;
   transition: 0.4s;
   font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
