@@ -27,5 +27,23 @@
 
 /* Styling for the Emojis */
 .faq-emoji {
-    padding: 5px;
+  display: inline-block;
+  padding: 5px;
+  vertical-align: middle;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out; /* Enlarges the text when you hover over it */
+  backface-visibility: hidden;
+}
+
+/* Stying for h2 on hover */
+h2:hover {
+  color: blue; /* Changes the text color to blue */
+  cursor: pointer;
+}
+
+h2:hover .faq-emoji {
+  /* Enlarges the emoji by 25% */
+  transform: scale(1.25); 
+  
+  /* Dark blue shadow */
+  filter: drop-shadow(0 4px 6px rgba(50, 27, 226, 0.4));
 }
