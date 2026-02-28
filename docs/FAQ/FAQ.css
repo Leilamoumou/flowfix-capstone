@@ -154,7 +154,6 @@ p {
 */
 
 #backToTopBtn {
-  /* display: none; */
   position: fixed;
   /* Fixed Position on Screen */
   bottom: 20px;

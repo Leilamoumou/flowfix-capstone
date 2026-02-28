@@ -58,3 +58,26 @@ expandBtn.addEventListener('click', function () {
 collapseBtn.addEventListener('click', function() {
   toggleAll(false);
 });
+
+/* Back To Top Button Functionality */
+var btn = document.getElementById("backToTopBtn");
+
+window.onscroll = function() {scroll()};
+
+function scroll() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+  {
+    btn.style.display = "block";
+  }
+  else
+  {
+    btn.style.display = "none;"
+  }
+}
+
+/* Event listener for BackToTop button */
+btn.addEventListener("click", function() {
+  /* Handles scrolling for various browsers */
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
