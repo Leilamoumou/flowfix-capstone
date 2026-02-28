@@ -26,8 +26,10 @@ body {
 .panel {
   padding: 0 18px;
   background-color: rgb(255, 255, 255);
-  display: none;
+  max-height: 0;
+  /* display: none; */
   overflow: hidden;
+  transition: max-height 0.4s ease-out;
 }
 
 /* Styling for the Emojis */
@@ -142,4 +144,35 @@ p {
 .collapse:active {
   box-shadow: #f7d7b5 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+/* 
+  Back to Top Button
+  Functionality: This button serves to improve user experience with the webpage.
+  Once the user has scrolled to some extent, they can click this button to bring
+  themselves back to the top of the webpage, without having to manually scroll back up.
+*/
+
+#backToTopBtn {
+  position: fixed;
+  /* Fixed Position on Screen */
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: rgb(152, 162, 222);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10pt;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* Rounded Edges */
+  border-radius: 10px;
+}
+
+#backToTopBtn:hover {
+  background-color: rgb(71, 76, 106);  /* Dark blue-purple color upon hover */
 }
