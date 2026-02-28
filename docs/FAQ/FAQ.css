@@ -145,3 +145,35 @@ p {
   box-shadow: #f7d7b5 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+/* 
+  Back to Top Button
+  Functionality: This button serves to improve user experience with the webpage.
+  Once the user has scrolled to some extent, they can click this button to bring
+  themselves back to the top of the webpage, without having to manually scroll back up.
+*/
+
+#backToTopBtn {
+  /* display: none; */
+  position: fixed;
+  /* Fixed Position on Screen */
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: rgb(152, 162, 222);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10pt;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* Rounded Edges */
+  border-radius: 10px;
+}
+
+#backToTopBtn:hover {
+  background-color: rgb(71, 76, 106);  /* Dark blue-purple color upon hover */
+}
