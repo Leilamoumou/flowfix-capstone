@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <!-- Navigation Header -->
+    <!-- Nav -->
     <header class="main-header">
       <div class="container">
         <div class="nav-wrapper">
@@ -35,32 +35,39 @@
         </div>
       </div>
     </header>
-
-    <main>
+    <!-- Login CARD structure:-->
       <section class="login-section">
-        <div class="container">
+      <div class="login-card">
+        <h2 id="form-title">Login</h2>
+        <p class="login-subtitle" id="form-subtitle">Welcome back!</p>
 
-          <h2 id="form-title">Login</h2>
-          <!-- Status messages:-->
-            <p id="message" style="display:none; padding: 10px; border-radius: 6px; margin-bottom: 16px; font-size: 0.9rem;"></p>
+        <div class="login-message" id="message"></div>
 
-          <form id="auth-form">
-            <label>Email</label>
-            <input type="email" id="email" placeholder="Email" required>
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit" class="btn" id="submit-btn">Login</button>
-          </form>
+        <form id="auth-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
 
-    <!-- Sign up & Login toggles: -->
-     <p style="text-align:center; margin-top: 16px; font-size: 0.9rem; color: #555;">
-            <span id="switch-label">New to FlowFix?</span>
-            <button id="switch-btn" style="background:none; border:none; color:#f97316; font-weight:bold; cursor:pointer; font-size:0.9rem;">Sign up</button>
-          </p>
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required />
 
-        </div>
-      </section>
-    </main>
+          <!-- Remember me + Forgot password row -->
+          <div class="login-extras" id="extras-row">
+            <label>
+              <input type="checkbox" id="remember-me"> Remember me
+            </label>
+            <a href="#" id="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submit-btn">Log in</button>
+        </form>
+
+        <p class="login-switch">
+          <span id="switch-label">New to FlowFix?</span>
+          <button id="switch-btn">Sign up</button>
+        </p>
+      </div>
+    </section>
+
      <script src="../script.js"></script>
 <!-- Firebase Authentication ** adjusted script-->
     <script type="module">
@@ -79,26 +86,53 @@
    projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
     appId: process.env.EXPO_PUBLIC_APP_ID
       };
+         const app  = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      let isSignUp = false;
+
+
 //DOM btn refs
-      const form        = document.getElementById("auth-form");
+    const form        = document.getElementById("auth-form");
       const submitBtn   = document.getElementById("submit-btn");
       const switchBtn   = document.getElementById("switch-btn");
       const formTitle   = document.getElementById("form-title");
+      const formSub     = document.getElementById("form-subtitle");
       const switchLabel = document.getElementById("switch-label");
       const messageEl   = document.getElementById("message");
+      //additional functions
+      const extrasRow   = document.getElementById("extras-row");
+      const forgotLink  = document.getElementById("forgot-link");
     // login toggle functionality
      switchBtn.addEventListener("click", () => {
 
         isSignUp = !isSignUp;
         
         formTitle.textContent   = isSignUp ? "Create Account" : "Login";
-        submitBtn.textContent   = isSignUp ? "Sign Up" : "Login";
+        formSub.textContent     = isSignUp ? "Join us today!" : "Welcome back!";
+        submitBtn.textContent   = isSignUp ? "Sign Up" : "Log in";
         switchLabel.textContent = isSignUp ? "Already a member?" : "New to FlowFix?";
         switchBtn.textContent   = isSignUp ? "Log in" : "Sign up";
+        // hide remember me option &  forgot password upon sign up site, only show on login
+         extrasRow.style.display = isSignUp ? "none" : "flex";
         clearMessage();
       });
-
-      //form submit functionality
+      //forgot password functionality for account access recovery
+forgotLink.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        if (!email) {
+          showMessage("Enter your email before selecting Forgot Password.", "error");
+          return;
+        }
+        try {
+          await sendPasswordResetEmail(auth, email);
+          showMessage("Password reset email sent, check your inbox for further instructions.", "success");
+        } catch (error) {
+          showMessage(friendlyError(error.code), "error");
+        }
+      });
+      //form submit functionality 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         clearMessage();
@@ -120,16 +154,16 @@
           showMessage(friendlyError(error.code), "error");
         }
       });
-       function showMessage(msg, type) {
-        messageEl.textContent = msg;
-        messageEl.style.display = "block";
-        messageEl.style.background = type === "error" ? "#fde8e8" : "#e8f5e9";
-        messageEl.style.color      = type === "error" ? "#b91c1c" : "#1b5e20";
-      }
 
+
+  
+    function showMessage(msg, type) {
+        messageEl.textContent = msg;
+        messageEl.className = `login-message ${type}`;
+      }
       function clearMessage() {
         messageEl.textContent = "";
-        messageEl.style.display = "none";
+        messageEl.className = "login-message";
       }
       // Error handling, where account creation credentials are managed & invalid credientals are encountered for login
        function friendlyError(code) {
@@ -144,7 +178,7 @@
           "auth/invalid-credential":   "Invalid email or password.",
           "auth/too-many-requests":    "Too many attempts.",
         };
-        return errors[code] || "An error occured. Try again.";
+        return errors[code] || "An error occured. Please try again.";
       }
     </script>
 
