@@ -1,15 +1,21 @@
 /*  Homepage CSS along with other pages*/
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
-
+/* UPDATED OT MATCH UI DESIGN */
 body {
-  font-family: 'Inria Sans';
+  font-family: 'Inria Sans',sans-serif;
   line-height: 1.6;
   color: #321be2;
+  margin: 0;
 }
-/* Headers + Nav */
+.container {
+  max-width:  1100px;
+  margin: 0 auto;
+  padding: 0 1.5 rem;
+}
+/* Headers + Nav  (dark navy*) */
 .main-header {
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #1e3a5f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   top: 0;
   z-index: 100;
 }
@@ -17,6 +23,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.75rem 0;
+}
+.logo h1{
+  color: #fff;
+  margin: 0;
+}
+.main-nav a,
+.main-nav button {
+  color: #fff;
 }
 /* Buttons */
 .btn {
@@ -25,6 +40,9 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-family: 'Inria Sans', sans-serif;
+  text-decoration: none;
+  color: #fff;
 }
 /*dark mode toggle */
 [data-theme="dark"] body {
@@ -32,7 +50,7 @@ body {
   color: #f0f0f0;
 }
 [data-theme="dark"] .main-header {
-  background: #1e1e1e;
+  background:  #0f1f33;
 }
 /* SERVICES GRID STYLE */
 .services-grid {
@@ -41,13 +59,13 @@ body {
   gap: 1.5rem;
 }
 .service-card {
-  padding: 1.5rem;
+padding: 1.5rem;
   border: 1px solid #731919;
   border-radius: 8px;
 }
 /* Chatbot style, will implement functionality later in js */
 .chat-bubble {
-  position: fixed;
+ position: fixed;
   bottom: 24px;
   right: 24px;
   background: #321be2;
@@ -63,7 +81,7 @@ body {
   z-index: 999;
 }
 .chat-window {
-  position: fixed;
+   position: fixed;
   bottom: 5rem;
   right: 2rem;
   width: 320px;
@@ -102,10 +120,10 @@ body {
   padding: 0.5rem;
 }
 .hamburger span {
-  display: block;
+   display: block;
   width: 25px;
   height: 3px;
-  background: #860000;
+  background: #fff;
   border-radius: 3px;
 }
 @media (max-width: 768px) {
@@ -125,10 +143,8 @@ body {
 /* Light/Dark Mode Theme Toggle Button Styling */
 .btn.theme-toggle {
   background: none;
-  border:none;
+  border: none;
   padding: 0.5rem;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: none;
@@ -142,16 +158,16 @@ body {
 
 /* Styling for the Icon */
 .btn.theme-toggle img{
-  width: 24px;
+ width: 24px;
   height: 24px;
   display: block;
   object-fit: contain;
 }
 /* Emergency button styling */
 .btn-emergency {
-  background-color: #f97316;  
+  background-color: #f97316;
   color: white;
-  border: 3px solid #1e3a5f;  
+  border: 3px solid #fff;
   padding: 12px 24px;
   font-weight: bold;
   font-size: 1rem;
@@ -164,3 +180,144 @@ body {
   background-color: #ea6c0a;
   color: white;
 }
+/* Login Page Styling */
+.login-section {
+  background-color: #f1f1f1;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding 40px 20px;
+}
+.login-card{
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 460px;
+}
+.login-card h2{
+  color:#1e3a5f;
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+.login-card .login-subtitle {
+  color: #555;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.login-card label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-family: 'Inria Sans', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.login-card input:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
+
+.login-card .btn-primary {
+  width: 100%;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Inria Sans', sans-serif;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.login-card .btn-primary:hover {
+  background-color: #ea6c0a;
+}
+/* row for 'remember me' option */
+.login-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+  color: #555;
+}
+.login-extras label {
+  font-weight: 400;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+.login-extras a {
+  color: #f97316;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-extras a:hover { text-decoration: underline; }
+/* switch / sign up link */
+.login-switch {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+}
+.login-switch button {
+  background: none;
+  border: none;
+  color: #f97316;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Inria Sans', sans-serif;
+}
+.login-switch button:hover { text-decoration: underline; }
+
+/* Message for login update */
+.login-message {
+  display: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+.login-message.error   { background: #fde8e8; color: #b91c1c; display: block; }
+.login-message.success { background: #e8f5e9; color: #1b5e20; display: block; }
+
+/*  MAINTENANCE PAGE */
+.maintenance-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+.maintenance-section h2 {
+  color: #1e3a5f;
+  margin-bottom: 1rem;
+}
+.maintenance-section a.btn {
+  background: #f97316;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.maintenance-section a.btn:hover { background: #ea6c0a; }
