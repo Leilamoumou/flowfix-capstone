@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowFix - Dashboard</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo"><h1><a href="/docs/index.html">Flowfix</a></h1></div>
+        <nav class="main-nav">
+          <a href="../Login/login.html" id="nav-login" class="btn">Login</a>
+          <a href="../GEN-Maintenance-Check/Maintenance.html">General Maintenance Check</a>
+          <a href="../Pricing/pricing.html">Pricing</a>
+          <a href="../Location/Location.html">Location</a>
+          <a href="../FAQ/FAQ.html">FAQ</a>
+          <a href="#contact" class="btn cta-nav">Contact</a>
+          <a href="#Emergency-Plumbing" class="btn btn-emergency">Emergency Help</a>
+          <button class="btn theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+            <img src="../../dark-mode.png" id="themeIcon" alt="Dark Mode Icon" width="30" height="30">
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="dashboard-section">
+    <div class="dashboard-card">
+
+      <!-- Plumber profile View: Incorporating their accepted jobs vs. reqs -->
+      <div class="dashboard-profile">
+        <h2>Welcome back, <span id="user-email"></span></h2>
+        <p class="role-badge">Plumber</p>
+      </div>
+
+      <div class="dashboard-block">
+  <h3>Open Requests</h3>
+  <div id="requests-list"><p>Loading...</p></div>
+    </div>
+
+
+<div class="dashboard-block">
+  <h3>Your Accepted Jobs</h3>
+  <div id="accepted-list"><p>Loading...</p></div>
+</div>
+  </div>
+  </section>
+
+  <script src="../../script.js"></script>
+  <script type="module">
+    // imports & logic  TODO @Leilamoumou
+    //Credentials & login to be validated, as well as auth
+
+//imports & credentials
+import { getApps, initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
+import { getFirestore, doc, getDoc, collection, query, where, orderBy, getDocs, updateDoc } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey:    "%%API_KEY%%",
+  authDomain:"%%AUTH_DOMAIN%%",
+  projectId: "flowfix-65fd1",
+  appId:     "1:878384279716:web:041715c6ae2aa120b23631"
+};
+const app  = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db   = getFirestore(app);
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    window.location.href = "../Login/login.html";
+    return;
+  }
+
+  // ROLECHECK : Customers cannot have access, redirect
+  const snap = await getDoc(doc(db, "users", user.uid));
+  if (snap.exists() && snap.data().role === "customer") {
+    window.location.href = "../Customer-Dashboard/customer-dashboard.html";
+    return;
+  }
+  document.getElementById("user-email").textContent = user.email;
+
+  loadOpenRequests();
+  loadAcceptedJobs(user.uid);
+});
+// Open request managing for plumber dashbaord
+async function loadOpenRequests() {
+  const listEl = document.getElementById("requests-list");
+  try {
+    const q = query(
+      collection(db, "requests"),
+      where("status", "==", "open"),
+      orderBy("createdAt", "desc")
+    );
+    const snapshot = await getDocs(q);
+
+    if (snapshot.empty) {
+      listEl.innerHTML = "<p>No open requests.</p>";
+      return;
+    }
+
+    listEl.innerHTML = snapshot.docs.map(d => {
+      const data = d.data();
+      return `
+        <div class="request-card">
+          <p><strong>Issue:</strong> ${data.issueDescription}</p>
+          <p><strong>Customer:</strong> ${data.customerEmail}</p>
+          <p class="request-date">${data.createdAt?.toDate().toLocaleDateString()}</p>
+          <button class="btn-primary accept-btn" data-id="${d.id}">Accept Job</button>
+        </div>
+      `;
+    }).join("");
+
+
+//Plumber job acceptance  handling:
+
+    document.querySelectorAll(".accept-btn").forEach(btn => {
+      btn.addEventListener("click", () => acceptJob(btn.dataset.id));
+    });
+
+  } catch (err) {
+    listEl.innerHTML = "<p>Failed to load requests.</p>";
+  }
+}
+//If accepted,  provide req info + update open requests and jobs accepted list:
+async function acceptJob(requestId) {
+  const user = auth.currentUser;
+  try {
+    await updateDoc(doc(db, "requests", requestId), {
+      status:      "accepted",
+      plumberUID:  user.uid,
+      plumberEmail: user.email
+    });
+    // Refresh both lists rather than one
+    loadOpenRequests();
+    loadAcceptedJobs(user.uid);
+  } catch (err) {
+    console.error("Failed to accept job, refresh and try again.", err);
+  }
+}
+//Accepted jobs loading
+async function loadAcceptedJobs(uid) {
+  const listEl = document.getElementById("accepted-list");
+  try {
+    const q = query(
+      collection(db, "requests"),
+      where("plumberUID", "==", uid),
+      where("status", "==", "accepted"),
+      orderBy("createdAt", "desc")
+    );
+    const snapshot = await getDocs(q);
+
+    if (snapshot.empty) {
+      listEl.innerHTML = "<p>No accepted jobs yet.</p>";
+      return;
+    }
+
+    listEl.innerHTML = snapshot.docs.map(d => {
+      const data = d.data();
+      return `
+        <div class="request-card">
+          <p><strong>Issue:</strong> ${data.issueDescription}</p>
+          <p><strong>Customer:</strong> ${data.customerEmail}</p>
+          <p class="request-date">${data.createdAt?.toDate().toLocaleDateString()}</p>
+          <span class="status-accepted">Accepted</span>
+        </div>
+      `;
+    }).join("");
+  } catch (err) {
+    listEl.innerHTML = "<p>Failed to load accepted jobs, please refresh to check the latest accepted jobs.</p>";
+  }
+}
+
+    //
+    </script>
+</body>
+</html>     
