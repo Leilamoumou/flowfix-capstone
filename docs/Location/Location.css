@@ -1,9 +1,12 @@
+/* Import Inria Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+
 /* CSS for Location Webpage */
 
 body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12 pt;
-    height: 100%;
+    font-family: 'Inria Sans',sans-serif;
+    line-height: 1.6;
+    color: #321be2;
     margin: 0;
 }
 
