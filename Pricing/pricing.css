@@ -8,9 +8,53 @@ body {
 
 /* NAVBAR */
 .nav {
-    background-color: #111;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 14px 50px;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 26px;
+    color: #111;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover{
+    color: #ff6a00;
+}
+
+.nav-cta {
+    text-decoration: none;
+    background: #ff6a00;
     color: white;
-    padding: 20px 60px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-cta:hover {
+    background: #e55c00;
 }
 
 .logo {
@@ -64,8 +108,6 @@ body {
     padding: 45px 20px;
     text-align: center;
 
-    border: 2.0px solid #0b0101;
-
     box-shadow: 0 10px 20px rgba(0,0,0,0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -108,14 +150,14 @@ body {
     padding: 10px 14px; 
     font-size: 14px;
     border: none;
-    background-color: #111;
+    background-color: #ff6a00;
     color: white;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .card-btn:hover {
-    background-color: #333;
+    background-color: #e55c00;
 }
 
 /* EMERGENCY BUTTON ONLY */
