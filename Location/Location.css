@@ -46,10 +46,10 @@ h1 {
 
 /* Styling for the Hero Text */
 .hero-text {
-    color: bisque;
+    color: black;
     position: absolute;
     font-weight: bold;
-    text-shadow: 4px 4px 4px brown;
+    text-shadow: 4px 4px 4px white;
 }
 
 /* FlowFix Location Hero Text */
@@ -74,33 +74,33 @@ h1 {
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: rgb(182, 166, 154);
+    background-color: white;
     margin: 0px;
     font-size: 20pt;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Inria Sans',sans-serif;
     font-weight: bold;
-    color: bisque;
-    text-shadow: 4px 4px 4px brown;    
+    color: black;
+    text-shadow: 4px 4px 4px rgb(184, 178, 178);    
 }
 
 .divider::before,
 .divider::after {
     content: "";
     height: 50px;
-    background-color: rgb(182, 166, 154);
+    background-color: white;
     flex-grow: 1;
     /* border-top: 5px solid tan; */
     /* border-bottom: 4px solid tan; */
     
 }
 
-.divider::before {
+/* .divider::before {
     margin-right: var(divider-gap, 10px);
 }
 
 .divider::after {
     margin-left: var(divider-gap, 10px);
-}
+} */
 
 .divider span {
     padding-left: 10px;
