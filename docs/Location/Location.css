@@ -18,7 +18,9 @@ body {
 .main-nav .btn,
 .main-nav a {
     color:black;
-    align-items: center;
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 15px;
 }
 
 h1 {
