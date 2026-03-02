@@ -1,0 +1,435 @@
+/* Home */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+visibility: hidden;
+width: 1440px;
+height: 240px;
+left: 0px;
+top: 780px;
+
+background: #F5F5F5;
+
+
+/* Frame 1 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 24px;
+gap: 10px;
+
+position: absolute;
+width: 260px;
+height: 140px;
+left: 742px;
+top: 812px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+
+
+/* 100% */
+
+width: 159px;
+height: 63px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 56px;
+line-height: 67px;
+
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Licensed Pros */
+
+width: 162px;
+height: 23px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 4 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 24px;
+gap: 10px;
+
+position: absolute;
+width: 260px;
+height: 140px;
+left: 436px;
+top: 812px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+
+
+/* <15min */
+
+width: 159px;
+height: 63px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 58px;
+
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Response Time */
+
+width: 162px;
+height: 23px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 24px;
+gap: 10px;
+
+position: absolute;
+width: 260px;
+height: 140px;
+left: 1047px;
+top: 812px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+
+
+/* 50K+ */
+
+width: 159px;
+height: 63px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 56px;
+line-height: 67px;
+
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Jobs Completed */
+
+width: 162px;
+height: 23px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 2 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 24px;
+gap: 10px;
+
+position: absolute;
+width: 260px;
+height: 140px;
+left: 133px;
+top: 812px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+
+
+/* 4.9/5 */
+
+width: 159px;
+height: 63px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 56px;
+line-height: 67px;
+
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Average Rating */
+
+width: 162px;
+height: 23px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Hero Rectangle  */
+
+position: absolute;
+width: 1440px;
+height: 700px;
+left: 0px;
+top: 80px;
+
+background: #0B1F3B;
+
+
+/* NavBar(group) */
+
+position: absolute;
+width: 1440px;
+height: 80px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+
+/* Log In Home Services Location FAQ Dashboard */
+
+position: absolute;
+width: 527px;
+height: 39px;
+left: 738px;
+top: 34px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #111111;
+
+
+
+/* FlowFix */
+
+position: absolute;
+width: 261px;
+height: 36px;
+left: 29px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 133px;
+top: 492px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency Help */
+
+position: absolute;
+width: 116px;
+height: 20px;
+left: 1177px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* GET HELP NOW */
+
+position: absolute;
+width: 118px;
+height: 22px;
+left: 153px;
+top: 502px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Get connected to licensed plumbers instantly. Available 24/7 for all your emergency needs */
+
+position: absolute;
+width: 477px;
+height: 59px;
+left: 124px;
+top: 398px;
+
+font-family: 'Inria Serif';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Emergency Plumbing. Matched to the Right Expert. */
+
+position: absolute;
+width: 545px;
+height: 56px;
+left: 120px;
+top: 94px;
+
+font-family: 'Inria Serif';
+font-style: normal;
+font-weight: 700;
+font-size: 56px;
+line-height: 67px;
+
+color: #FFFFFF;
+
