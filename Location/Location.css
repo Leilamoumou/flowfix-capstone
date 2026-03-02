@@ -70,7 +70,7 @@ h1 {
 }
 
 /* Divider */
-.divider {
+.divider, .dividerHQ {
     display: flex;
     align-items: center;
     text-align: center;
@@ -91,21 +91,23 @@ h1 {
     flex-grow: 1;
     /* border-top: 5px solid tan; */
     /* border-bottom: 4px solid tan; */
-    
 }
-
-/* .divider::before {
-    margin-right: var(divider-gap, 10px);
-}
-
-.divider::after {
-    margin-left: var(divider-gap, 10px);
-} */
 
 .divider span {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.dividerHQ span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Removes stray margin color in light mode */
+/* .dividerHQ {
+    margin-top: -10px;
+    margin-bottom: -10px;
+} */
 
 /* Footer Styles */
 .footer {
@@ -199,6 +201,34 @@ h1 {
 [data-theme="dark"] .hamburger span {
     background-color: #ffffff;
 }
+
+/* Styling for Divider in dark mode */
+[data-theme="dark"] .divider {
+    background-color: #1e3a5f !important;
+    color: white !important;
+    text-shadow: none !important;
+}
+
+[data-theme="dark"] .divider::before,
+[data-theme="dark"] .divider::after {
+    background-color: #1e3a5f !important;
+}
+
+[data-theme="dark"] .dividerHQ::before,
+[data-theme="dark"] .dividerHQ::after {
+    background-color: #1e3a5f !important;
+}
+
+/* Styling for DividerHQ in dark mode */
+[data-theme="dark"] .dividerHQ {
+    background-color: #1e3a5f !important;
+    color: white !important;
+    text-shadow: none !important;
+}
+
+
+/* TO DO - Styling for Footer in dark mode */
+
 
 /* The nav buttons are hidden on mobile by default */
 @media (max-width: 768px) {
