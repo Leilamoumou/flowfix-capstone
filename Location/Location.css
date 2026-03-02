@@ -18,6 +18,7 @@ body {
 .main-nav .btn,
 .main-nav a {
     color:black;
+    align-items: center;
 }
 
 h1 {
@@ -70,7 +71,7 @@ h1 {
 }
 
 /* Divider */
-.divider, .dividerHQ {
+.divider {
     display: flex;
     align-items: center;
     text-align: center;
@@ -80,7 +81,35 @@ h1 {
     font-family: 'Inria Sans',sans-serif;
     font-weight: bold;
     color: black;
-    text-shadow: 4px 4px 4px rgb(184, 178, 178);    
+    text-shadow: 4px 4px 4px rgb(184, 178, 178);   
+    min-height: auto; 
+}
+
+/* Headquarters Section of Text */
+.dividerHQ {
+    display: block;
+    text-align: center;
+    color: black;
+    font-size: 20pt;
+    font-family: 'Inria Sans',sans-serif;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px rgb(184, 178, 178); 
+    justify-content: center;
+    background-color: white;
+    margin: 0px;
+    min-height: auto;
+    padding: 30px 10%; /* Padding around the text for a spacious look */
+}
+
+[data-theme="dark"] .dividerHQ {
+    background-color: #1e3a5f !important;
+    color: white;
+    text-shadow: none;
+    margin: none !important;
+    border: none !important;
+    /* Removes the black margin on the top/bottom of divider */
+    margin-top: -8px;
+    margin-bottom: -8px;
 }
 
 .divider::before,
@@ -119,6 +148,15 @@ h1 {
     margin-top: 4px;
 }
 
+/* Styling for Footer in dark mode - Background */
+[data-theme="dark"] .footer {
+    background-image: linear-gradient(to bottom, #1e3a5f, black);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 4px;
+}
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -135,8 +173,17 @@ h1 {
     transition: color 0.3s ease-in-out;
 }
 
+/* Footer Social Media Links in Dark Mode */
+[data-theme="dark"] .footer-social a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
 .footer-social a:hover {
-    color: brown; /* Highlight color on hover */
+    color: orange; /* Highlight color on hover */
 }
 
 /* Business Hours */
@@ -262,7 +309,43 @@ h1 {
     display: block;
 }
 
+.btn.theme-toggle {
+    background:none;
+    border:none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 15px;
+    height: 20px;
+}
+
 .btn.theme-toggle:hover {
     transform: scale(1.02);
     transition: transform 0.2s ease;
+}
+
+/* Styling for Emergency Button */
+.btn-emergency {
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 15px;  /* Rounded Edges */
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px 0 rgba (0, 0, 0, 0.15);
+    color: white !important;
+    padding: 10px;
+}
+ /* Styling for Emergency Button in Dark Mode */
+[data-theme="dark"] .btn-emergency {
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 15px;  /* Rounded Edges */
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px 0 rgba (0, 0, 0, 0.15);
+    color: #1e3a5f !important;
+    padding: 10px;
 }
