@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowFix | Contact</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+<header class="nav">
+    <div class="nav-inner">
+        <div class="logo">FlowFix</div>
+
+        <nav class="nav-links">
+            <a href="https://leilamoumou.github.io/flowfix-capstone/Login/login.html">Log In</a>
+            <a href="https://leilamoumou.github.io/flowfix-capstone/Pricing/pricing.html">Pricing</a>
+            <a href="https://leilamoumou.github.io/flowfix-capstone/Location/Location.html">Location</a>
+            <a href="https://leilamoumou.github.io/flowfix-capstone/FAQ/FAQ.html">FAQ</a>
+            <a href="https://leilamoumou.github.io/flowfix-capstone/Contact/contact.html">Contact</a>
+        </nav>
+
+        <a class="nav-cta" href="tel:+15551234567">Call Now</a>
+    </div>
+</header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Get in Touch</h1>
+    <p>Tell us what you need — we’ll respond as soon as possible.</p>
+  </div>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact">
+    <div class="contact-layout">
+
+      <!-- MESSAGE -->
+      <div class="card form-card">
+        <h2 class="card-title">Send a Message</h2>
+        <p class="card-subtitle">For scheduling and general questions, use the form below.</p>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="two-col">
+            <div class="field">
+              <label for="fname">First Name *</label>
+              <input id="fname" name="fname" type="text" placeholder="Erina" required />
+            </div>
+
+            <div class="field">
+              <label for="lname">Last Name *</label>
+              <input id="lname" name="lname" type="text" placeholder="Khondakar" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
+          </div>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="service">Service Type</label>
+              <select id="service" name="service">
+                <option value="leak">Leak Detection</option>
+                <option value="drain">Drain Cleaning</option>
+                <option value="installation">Pipe Installation</option>
+                <option value="bathroom">Bathroom & Fixtures Installation</option>
+                <option value="waterheater">Water Heater Services</option>
+                <option value="emergency">Emergency</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="contactpref">Preferred Contact</label>
+              <select id="contactpref" name="contactpref">
+                <option value="call">Call</option>
+                <option value="text">Text</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Describe the issue..." required></textarea>
+          </div>
+
+          <button class="card-btn" type="submit">Send Message</button>
+
+          <p class="fineprint">By submitting, you agree we may contact you by phone or email.</p>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO CARD -->
+      <div class="info-stack">
+
+        <div class="card info-card">
+          <h2 class="card-title">Contact Info</h2>
+
+          <div class="info-row">
+            <span class="info-label">Phone</span>
+            <a class="info-value" href="tel:+15551234567">(555) 123-4567</a>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <a class="info-value" href="mailto:support@flowfix.com">support@flowfix.com</a>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">Hours</span>
+            <span class="info-value">Mon–Sat, 8:00am–6:00pm</span>
+          </div>
+        </div>
+
+        <div class="card emergency-strip">
+          <h2 class="card-title">Emergency Service</h2>
+          <p class="card-subtitle">For urgent leaks, flooding, or burst pipes:</p>
+          <a class="card-btn emergency-btn" href="tel:+15551234567">Call Now</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
