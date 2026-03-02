@@ -20,14 +20,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
-
       - name: Inject Firebase config
         run: |
-          run: |
-            sed -i "s|%%API_KEY%%|${{ secrets.EXPO_PUBLIC_API_KEY }}|g" docs/Login/login.html
-           sed -i "s|%%AUTH_DOMAIN%%|${{ secrets.EXPO_PUBLIC_AUTH_DOMAIN }}|g" docs/Login/login.html
-
+          sed -i "s|%%API_KEY%%|${{ secrets.API_KEY }}|g" docs/Login/login.html
+          sed -i "s|%%AUTH_DOMAIN%%|${{ secrets.AUTH_DOMAIN }}|g" docs/Login/login.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
