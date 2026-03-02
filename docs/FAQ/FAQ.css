@@ -2,8 +2,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Inria Sans',sans-serif;
+  line-height: 1.6;
+  color: #321be2;
+  margin: 0;
 }
+
+/* Navigation Bar Styling */
+/* Navigation Bar background color */
+.main-header {
+  background-color: white;
+}
+
+.main-nav .btn,
+.main-nav a {
+  color:black;
+}
+
+h1 {
+  font-family: 'Inria Sans',sans-serif;
+  color:black;
+}
+
+.logo h1 {
+  color: black;
+}
+
+/* 
+    Dark Mode Settings
+    - Navigation bar background switches to Navy color 
+    - Logo color switches to white
+*/
+
+[data-theme="dark"] .main-header {
+  background-color: #1e3a5f;
+}
+
+/* Dark Mode - Logo switches to white */
+[data-theme="dark"] .logo h1 {
+  color: white;
+}
+
+/* Dark Mode - Nav Bar buttons switch to white */
+[data-theme="dark"] .main-nav .btn,
+[data-theme="dark"] .main-nav a {
+  color: white;
+}
+
+/* Light & Dark Mode - Hamburger */ 
+.hamburger span {
+  background-color: black;
+}
+
+[data-theme="dark"] .hamburger span {
+  background-color: #ffffff;
+}
+
+/* Light/Dark mode icon */
+.btn.theme-toggle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.btn.theme-toggle:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
@@ -179,3 +246,4 @@ p {
 #backToTopBtn:hover {
   background-color: rgb(71, 76, 106);  /* Dark blue-purple color upon hover */
 }
+
