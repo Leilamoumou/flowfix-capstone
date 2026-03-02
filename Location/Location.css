@@ -199,3 +199,40 @@ h1 {
 [data-theme="dark"] .hamburger span {
     background-color: #ffffff;
 }
+
+/* The nav buttons are hidden on mobile by default */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Light mode background */
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    [data-theme="dark"] .main-nav {
+        background-color: #1e3a5f;
+    }
+}
+
+/* Light/Dark mode icon */
+.btn.theme-toggle img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
+.btn.theme-toggle:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}

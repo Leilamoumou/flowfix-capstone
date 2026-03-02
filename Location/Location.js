@@ -30,3 +30,16 @@ if (themeToggle)
   });
 }
 
+// Hamburger Functionality - Toggle open/close
+const hamburgerMenu = document.getElementById('hamburger');
+const mainNav = document.querySelector('.main-nav');
+
+hamburgerMenu.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+});
+
+document.querySelectorAll('.main-nav a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        mainNav.classList.remove('active');
+    })
+})
