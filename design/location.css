@@ -1,0 +1,187 @@
+/* Location */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+visibility: hidden;
+width: 1440px;
+height: 240px;
+left: 0px;
+top: 780px;
+
+background: #F5F5F5;
+
+
+/* NavBar(group) */
+
+position: absolute;
+width: 1440px;
+height: 80px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+
+/* Log In Home Services Location FAQ Dashboard */
+
+position: absolute;
+width: 527px;
+height: 39px;
+left: 781px;
+top: 40px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #111111;
+
+
+
+/* FlowFix */
+
+position: absolute;
+width: 261px;
+height: 36px;
+left: 29px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1208px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency Help */
+
+position: absolute;
+width: 116px;
+height: 20px;
+left: 1235px;
+top: 28px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Get connected to licensed plumbers instantly. Available 24/7 for all your emergency needs */
+
+position: absolute;
+width: 477px;
+height: 59px;
+left: 124px;
+top: 398px;
+
+font-family: 'Inria Serif';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* location-hero-img 1 */
+
+position: absolute;
+width: 1440px;
+height: 650px;
+left: 0px;
+top: 89px;
+
+background: url(location-hero-img.png);
+
+
+/* Screenshot 2026-03-02 at 11.40.20 AM 1 */
+
+position: absolute;
+width: 1440px;
+height: 613px;
+left: 0px;
+top: 739px;
+
+background: url(Screenshot 2026-03-02 at 11.40.20 AM.png);
+
+
+/* Flow- Fix Locations */
+
+position: absolute;
+width: 303px;
+height: 84px;
+left: 29px;
+top: 289px;
+
+font-family: 'Cormorant Garamond';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 44px;
+
+color: #F6E0D8;
+
+text-shadow: 0px 8px 12px rgba(200, 110, 94, 0.45), 0px 4px 2px rgba(182, 90, 79, 0.7);
+
+
+/* Rectangle 18 */
+
+position: absolute;
+width: 1440px;
+height: 70px;
+left: 0px;
+top: 685px;
+
+background: #B7A394;
+
+
+/* Our Location */
+
+position: absolute;
+width: 198px;
+height: 49px;
+left: 634px;
+top: 695px;
+
+font-family: 'Cormorant Garamond';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+
+color: #F2D3C2;
+
+text-shadow: 0px 4px 2px rgba(182, 84, 73, 0.7), 0px 8px 12px rgba(200, 110, 94, 0.45);
