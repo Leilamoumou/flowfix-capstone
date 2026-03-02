@@ -312,3 +312,16 @@ h1 {
     transform: scale(1.02);
     transition: transform 0.2s ease;
 }
+
+/* Styling for Emergency Button */
+.btn-emergency {
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 15px;  /* Rounded Edges */
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px 0 rgba (0, 0, 0, 0.15);
+    color: white !important;
+    padding: 10px;
+}
