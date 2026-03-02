@@ -72,6 +72,7 @@
      <script src="../script.js"></script>
 <!-- Firebase Authentication ** adjusted script-->
     <script type="module">
+      import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
       import {
         getAuth,
@@ -81,20 +82,22 @@
       } 
       from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
 
-      //config
-       const firebaseConfig = {
-     apiKey:     "%%API_KEY%%",
+      //config. cred. info.
+
+const firebaseConfig = {
+    apiKey:     "%%API_KEY%%",
     authDomain: "%%AUTH_DOMAIN%%",
     projectId: "flowfix-65fd1",
-   appId: "1:878384279716:web:041715c6ae2aa120b23631",      };
-    const app  = initializeApp(firebaseConfig);
+    appId: "1:878384279716:web:041715c6ae2aa120b23631",      };
+      const app  = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+      const db = getFirestore(app);
 
       let isSignUp = false;
 
 
 //DOM btn refs
-    const form        = document.getElementById("auth-form");
+      const form        = document.getElementById("auth-form");
       const submitBtn   = document.getElementById("submit-btn");
       const switchBtn   = document.getElementById("switch-btn");
       const formTitle   = document.getElementById("form-title");
@@ -116,6 +119,8 @@
         switchBtn.textContent   = isSignUp ? "Log in" : "Sign up";
         // hide remember me option &  forgot password upon sign up site, only show on login
          extrasRow.style.display = isSignUp ? "none" : "flex";
+         //role selection toggle
+         document.getElementById("role-select").style.display = isSignUp ? "flex" : "none";
         clearMessage();
       });
       //forgot password functionality for account access recovery
@@ -133,6 +138,10 @@ forgotLink.addEventListener("click", async (e) => {
           showMessage(friendlyError(error.code), "error");
         }
       });
+      <div class="role-select" id="role-select">
+  <label><input type="radio" name="role" value="customer" checked> I'm a user who would like to be connected with plumbers for plumbing assistance.</label>
+  <label><input type="radio" name="role" value="plumber"> I'm a plumber who would like to be connected with new clients for my work.</label>
+</div>
       //form submit functionality 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -143,12 +152,18 @@ forgotLink.addEventListener("click", async (e) => {
         //account creation & login check + error handling :
  try {
           if (isSignUp) {
-            await createUserWithEmailAndPassword(auth, email, password);
-            showMessage("Account creation successful.", "success");
-          } else {
+             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const role = document.querySelector('input[name="role"]:checked').value;
+            await setDoc(doc(db, "users", userCredential.user.uid), {
+                  email,
+                  role,
+                 createdAt: new Date()
+  });
+  showMessage("Account creation successful.", "success");
+} else {
             await signInWithEmailAndPassword(auth, email, password);
             const user = auth.currentUser;
-const token = await user.getIdToken();
+        const token = await user.getIdToken();
 
 const response = await fetch('https://flowfix-capstone-production.up.railway.app/profile', {
   headers: {
