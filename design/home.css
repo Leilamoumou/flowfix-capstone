@@ -40,10 +40,10 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 border-radius: 12px;
 
 
-/* 100% */
+/* 🛡100% */
 
-width: 159px;
-height: 63px;
+width: 187px;
+height: 67px;
 
 font-family: 'Inria Sans';
 font-style: normal;
@@ -62,7 +62,7 @@ flex-grow: 0;
 
 /* Licensed Pros */
 
-width: 162px;
+width: 112px;
 height: 23px;
 
 font-family: 'Inria Sans';
@@ -123,7 +123,7 @@ flex-grow: 0;
 
 /* Response Time */
 
-width: 162px;
+width: 122px;
 height: 23px;
 
 font-family: 'Inria Sans';
@@ -184,7 +184,7 @@ flex-grow: 0;
 
 /* Jobs Completed */
 
-width: 162px;
+width: 124px;
 height: 23px;
 
 font-family: 'Inria Sans';
@@ -223,10 +223,10 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 border-radius: 12px;
 
 
-/* 4.9/5 */
+/* ☆4.9/5 */
 
-width: 159px;
-height: 63px;
+width: 182px;
+height: 67px;
 
 font-family: 'Inria Sans';
 font-style: normal;
@@ -245,7 +245,7 @@ flex-grow: 0;
 
 /* Average Rating */
 
-width: 162px;
+width: 114px;
 height: 23px;
 
 font-family: 'Inria Sans';
@@ -432,4 +432,3 @@ font-size: 56px;
 line-height: 67px;
 
 color: #FFFFFF;
-
