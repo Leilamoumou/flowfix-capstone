@@ -1,0 +1,600 @@
+/* FAQ */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+visibility: hidden;
+width: 1440px;
+height: 240px;
+left: 0px;
+top: 780px;
+
+background: #F5F5F5;
+
+
+/* Hero Rectangle  */
+
+position: absolute;
+width: 1440px;
+height: 337px;
+left: -19px;
+top: 79px;
+
+background: #0B1F3B;
+
+
+/* NavBar(group) */
+
+position: absolute;
+width: 1440px;
+height: 80px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+
+/* Log In Home Services Location FAQ Dashboard */
+
+position: absolute;
+width: 527px;
+height: 39px;
+left: 742px;
+top: 40px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #111111;
+
+
+
+/* FlowFix */
+
+position: absolute;
+width: 261px;
+height: 36px;
+left: 29px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency Help */
+
+position: absolute;
+width: 116px;
+height: 20px;
+left: 1177px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Frequently Asked Questions */
+
+position: absolute;
+width: 666px;
+height: 47px;
+left: 397px;
+top: 130px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 64px;
+
+color: #FFFFFF;
+
+
+
+/* Clear answers. No surprises */
+
+position: absolute;
+width: 429px;
+height: 51px;
+left: 558px;
+top: 203px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+
+color: #C7D3E0;
+
+
+
+/* Frame 6 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 20px;
+
+position: absolute;
+width: 820px;
+height: 375px;
+left: 291px;
+top: 467px;
+
+
+
+/* Component 3 */
+
+width: 820px;
+height: 59px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GQ closed */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 25px;
+
+position: absolute;
+left: 32.07%;
+right: 44.02%;
+top: 13.56%;
+bottom: 13.56%;
+
+background: #FFFFFF;
+border-radius: 12px;
+
+
+/* 💬 General Questions */
+
+width: 196px;
+height: 27px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* + */
+
+position: absolute;
+left: 91.22%;
+right: 5.73%;
+top: 18.64%;
+bottom: 13.56%;
+
+font-family: 'Plaster';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+color: #FF6B00;
+
+
+
+/* Component 4 */
+
+width: 820px;
+height: 59px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GQ closed */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 25px;
+
+position: absolute;
+left: 32.07%;
+right: 44.02%;
+top: 13.56%;
+bottom: 13.56%;
+
+background: #FFFFFF;
+border-radius: 12px;
+
+
+/* 🏷 Pricing & Estimates           */
+
+width: 210px;
+height: 27px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* + */
+
+position: absolute;
+left: 91.22%;
+right: 5.73%;
+top: 18.64%;
+bottom: 13.56%;
+
+font-family: 'Plaster';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+color: #FF6B00;
+
+
+
+/* Component 8 */
+
+width: 820px;
+height: 59px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GQ closed */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 25px;
+
+position: absolute;
+left: 32.07%;
+right: 44.02%;
+top: 13.56%;
+bottom: 13.56%;
+
+background: #FFFFFF;
+border-radius: 12px;
+
+
+/* 💬 General Questions */
+
+width: 286px;
+height: 27px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* + */
+
+position: absolute;
+left: 91.22%;
+right: 5.73%;
+top: 18.64%;
+bottom: 13.56%;
+
+font-family: 'Plaster';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+color: #FF6B00;
+
+
+
+/* Component 6 */
+
+width: 820px;
+height: 59px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GQ closed */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 25px;
+
+position: absolute;
+left: 32.07%;
+right: 44.02%;
+top: 13.56%;
+bottom: 13.56%;
+
+background: #FFFFFF;
+border-radius: 12px;
+
+
+/* 💬 General Questions */
+
+width: 243px;
+height: 27px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* + */
+
+position: absolute;
+left: 91.22%;
+right: 5.73%;
+top: 18.64%;
+bottom: 13.56%;
+
+font-family: 'Plaster';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+color: #FF6B00;
+
+
+
+/* Component 7 */
+
+width: 820px;
+height: 59px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GQ closed */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 25px;
+
+position: absolute;
+left: 32.07%;
+right: 44.02%;
+top: 13.56%;
+bottom: 13.56%;
+
+background: #FFFFFF;
+border-radius: 12px;
+
+
+/* 💬 General Questions */
+
+width: 230px;
+height: 27px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* + */
+
+position: absolute;
+left: 91.22%;
+right: 5.73%;
+top: 18.64%;
+bottom: 13.56%;
+
+font-family: 'Plaster';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+color: #FF6B00;
+
