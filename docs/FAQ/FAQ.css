@@ -292,3 +292,27 @@ p {
 [data-theme="dark"] .accordion:hover {
   background-color: #3e6596;
 }
+
+[data-theme="dark"] .panel {
+  background-color: #1a2f4a;
+  color: #e0e0e0;
+} 
+
+[data-theme="dark"] body {
+  background-color: #1e3a5f;
+  color: white;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2 {
+  color: white;
+}
+
+[data-theme="dark"] #backToTopBtn {
+  background-color: #3e6596;
+  color:white;
+}
+
+[data-theme="dark"] #backToTopBtn:hover {
+  background-color: #192a3e;
+}
