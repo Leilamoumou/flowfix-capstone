@@ -82,6 +82,9 @@
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
       import {
         getAuth,
+        setPersistence,
+        browserLocalPersistence,
+        browserSessionPersistence,
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
         sendPasswordResetEmail 
@@ -171,47 +174,66 @@ const now = Date.now();
 
         const email    = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
+        
         //account creation & login check + error handling :
  try {
           if (isSignUp) {
              const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const role = document.querySelector('input[name="role"]:checked').value;
+           
+             const role = document.querySelector('input[name="role"]:checked').value;
+          
             await setDoc(doc(db, "users", userCredential.user.uid), {
                   email,
                   role,
                  createdAt: new Date()
   });
-  showMessage("Account creation successful.", "success");
-} else {
-            await signInWithEmailAndPassword(auth, email, password);
-            const user = auth.currentUser;
-        const token = await user.getIdToken();
+  
+            showMessage("Account creation successful.", "success");
+            setTimeout(() => { window.location.href = "../index.html"; }, 1000);
 
-const response = await fetch('https://flowfix-capstone-production.up.railway.app/profile', {
-  headers: {
-    'Authorization': `Bearer ${token}`
-  }
-});
-const data = await response.json();
-console.log(data);
+          }
+else {
+  const rememberMe = document.getElementById("remember-me").checked;
+  await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence);
+          await signInWithEmailAndPassword(auth, email, password);
+
+            const user  = auth.currentUser;
+            const token = await user.getIdToken();
+try {
+              const response = await fetch('https://flowfix-capstone-production.up.railway.app/profile', {
+                headers: { 'Authorization': `Bearer ${token}` }
+              });
+
+if (!response.ok) {
+  //logging the failures:
+                console.warn("Profile fetch failed:", response.status);
+              } else {
+                const data = await response.json();
+                console.log(data);
+              }
+            } catch (fetchError) {
+              console.warn("Profile fetch error:", fetchError.message);
+            }
+
             showMessage("Login successful.", "success");
             setTimeout(() => { window.location.href = "../index.html"; }, 1000);
           }
+
         } catch (error) {
-          
           showMessage(friendlyError(error.code), "error");
         }
       });
 
 
   
-    function showMessage(msg, type) {
+      function showMessage(msg, type) {
         messageEl.textContent = msg;
-        messageEl.className = `login-message ${type}`;
+        messageEl.className   = `login-message ${type}`;
       }
+
       function clearMessage() {
         messageEl.textContent = "";
-        messageEl.className = "login-message";
+        messageEl.className   = "login-message";
       }
       // Error handling, where account creation credentials are managed & invalid credientals are encountered for login
        function friendlyError(code) {
@@ -226,9 +248,10 @@ console.log(data);
           "auth/invalid-credential":   "Invalid email or password.",
           "auth/too-many-requests":    "Too many attempts.",
         };
-        return errors[code] || "An error occured. Please try again.";
+        return errors[code] || "An error occurred. Please try again.";
       }
     </script>
-<script type="module" src="../auth-state.js"></script>
+
+    <script type="module" src="../auth-state.js"></script>
   </body>
 </html>
