@@ -112,6 +112,7 @@ const firebaseConfig = {
       const messageEl   = document.getElementById("message");
       //additional functions
       const extrasRow   = document.getElementById("extras-row");
+
       const forgotLink  = document.getElementById("forgot-link");
     // login toggle functionality
      switchBtn.addEventListener("click", () => {
@@ -130,8 +131,26 @@ const firebaseConfig = {
         clearMessage();
       });
       //forgot password functionality for account access recovery
+      // needs to appear upon a certain # of failed attempts
+      let forgotAttempts = 0;
+let forgotWindowStart = null;
+const FORGOT_LIMIT = 3;
+const FORGOT_WINDOW_MS = 60 * 1000;
+
 forgotLink.addEventListener("click", async (e) => {
-        e.preventDefault();
+  e.preventDefault();
+
+const now = Date.now();
+  if (!forgotWindowStart || now - forgotWindowStart > FORGOT_WINDOW_MS) {
+    forgotAttempts = 0;
+    forgotWindowStart = now;
+  }
+  forgotAttempts++;
+  if (forgotAttempts > FORGOT_LIMIT) {
+    showMessage("Too many attempts to reset password occurred . Please wait before attempting again.", "error");
+    return;
+  }
+
         const email = document.getElementById("email").value.trim();
         if (!email) {
           showMessage("Enter your email before selecting Forgot Password.", "error");
