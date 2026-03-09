@@ -73,27 +73,32 @@ const themeToggle = document.getElementById("themeToggle");
 
 if (themeToggle)
 {
-  themeToggle.addEventListener("click", function()
-  {
+  themeToggle.addEventListener("click", function() {
     const html = document.documentElement;
     const themeIcon = this.querySelector("img");
-
-    // Checks if webpage is currently in Dark Mode
-    const isDark = html.getAttribute("data-theme") === "dark";
-
-    if (isDark)
-    {
-      // If webpage is in dark mode, switch to light mode
-      html.setAttribute("data-theme", "light");
-      themeIcon.src = "dark-mode.png";
-      themeIcon.alt = "Switch to Dark Mode"; // Alternative Text for greater accessibility
+  
+    // 1. Determine the NEW state
+    const isCurrentlyDark = html.getAttribute("data-theme") === "dark";
+    const nextTheme = isCurrentlyDark ? "light" : "dark";
+  
+    // 2. Apply the theme to the HTML tag
+    html.setAttribute("data-theme", nextTheme);
+  
+    // 3. Set the icon based on the theme we JUST applied
+    if (nextTheme === "dark") {
+      // Page is now DARK -> Show the SUN
+      // Adding the leading / tells the browser to start from the root
+      themeIcon.src = "/light-mode.png"; 
+      themeIcon.alt = "Switch to Light Mode";
+    } else {
+      // Page is now LIGHT -> Show the MOON
+      themeIcon.src = "/dark-mode.png";
+      themeIcon.alt = "Switch to Dark Mode";
     }
-    else
-    {
-      // If webpage is in light mode, switch to dark mode
-      html.setAttribute("data-theme", "dark");
-      themeIcon.src = "light-mode.png";
-      themeIcon.alt = "Switch to Light Mode"; // Alternative Text for greater accessibility
-    }
+  
+    // Debugging: This will show in your F12 console
+    console.log("Theme changed to:", nextTheme);
+    console.log("Icon src set to:", themeIcon.src);
+  
   });
 }
