@@ -10,6 +10,7 @@ ENTAILS THE FOLLOWING:
 //fix attempt to minimize module bug issues for login.
 import { getApps, initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
 const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
 
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
 import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
@@ -35,8 +36,26 @@ onAuthStateChanged(auth, async (user) => {
     loginLink.href = role === "plumber"
   ? "../Plumber-Dashboard/plumber-dashboard.html"
   : "../Customer-Dashboard/customer-dashboard.html";
-  } else {
-    loginLink.textContent = "Login";
-    loginLink.href = "login.html";
+
+    //LOGOUT button
+     if (!document.getElementById("logout-btn")) {
+          const logoutBtn = document.createElement("button");
+          logoutBtn.textContent = "Logout";
+          logoutBtn.id = "logout-btn";
+           logoutBtn.className = "btn";
+      
+           logoutBtn.addEventListener("click", async () => {
+               await signOut(auth);
+                   window.location.href = "../Login/login.html";
+
+    });
+    loginLink.parentNode.insertBefore(logoutBtn, loginLink.nextSibling);
+  } 
+}
+  else {
+  loginLink.textContent = "Login";
+  loginLink.href = "login.html";
+  const logoutBtn = document.getElementById("logout-btn");
+  if (logoutBtn) logoutBtn.remove();
   }
 });
