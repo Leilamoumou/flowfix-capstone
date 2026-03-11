@@ -33,6 +33,8 @@ jobs:
           sed -i "s|%%AUTH_DOMAIN%%|${{ secrets.AUTH_DOMAIN }}|g" docs/Plumber-Dashboard/plumber-dashboard.html
           sed -i "s|%%API_KEY%%|${{ secrets.API_KEY }}|g" docs/Reset-Password/reset-password.html
           sed -i "s|%%AUTH_DOMAIN%%|${{ secrets.AUTH_DOMAIN }}|g" docs/Reset-Password/reset-password.html
+          sed -i "s|%%API_KEY%%|${{ secrets.API_KEY }}|g" docs/Profile/profile.html
+          sed -i "s|%%AUTH_DOMAIN%%|${{ secrets.AUTH_DOMAIN }}|g" docs/Profile/profile.html
     
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
