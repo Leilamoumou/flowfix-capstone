@@ -51,7 +51,6 @@ onAuthStateChanged(auth, async (user) => {
 }
   else {
   loginLink.textContent = "Login";
-  loginLink.href = "login.html";
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.remove();
   }
