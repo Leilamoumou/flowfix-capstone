@@ -168,3 +168,62 @@ body {
 .emergency-btn:hover {
     background-color: #b42318;
 }
+
+/* @judykuang implemented styling for light & dark mode toggles */
+
+[data-theme="dark"] body {
+    background-color: #0f172a;
+    color: white;
+}
+
+[data-theme="dark"] .nav {
+    background-color: #1e3a5f;
+    border-bottom: 1px solid #334155;
+}
+
+[data-theme="dark"] .nav-links a,
+[data-theme="dark"] .logo {
+    color: white !important;
+}
+
+[data-theme="dark"] .hero {
+    background: none !important;
+    background-color: #1e3a5f !important;
+    color:white;
+    border-bottom: 1px solid #334155;
+}
+
+[data-theme="dark"] .hero p {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .card {
+    background-color: #1e3a5f;
+    color:white;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card h3,
+[data-theme="dark"] .card p {
+    color:white;
+}
+
+[data-theme="dark"] .card-btn {
+    background-color: #ff8c00;
+    color:white;
+}
+
+[data-theme="dark"] .emergency-card {
+    background-color: #2d1b1b;
+    border-color: #ff8c00;
+}
+
+.btn.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
