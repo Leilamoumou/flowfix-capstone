@@ -31,7 +31,8 @@ onAuthStateChanged(auth, async (user) => {
     const snap = await getDoc(doc(db, "users", user.uid));
     const role = snap.exists() ? snap.data().role : "customer";
     loginLink.textContent = "Profile";
-    loginLink.href = "Profile/profile.html";
+   loginLink.href = "/flowfix-capstone/Profile/profile.html"; 
+
 
     //LOGOUT button
      if (!document.getElementById("logout-btn")) {
@@ -42,7 +43,7 @@ onAuthStateChanged(auth, async (user) => {
       
            logoutBtn.addEventListener("click", async () => {
                await signOut(auth);
-                   window.location.href = "../Login/login.html";
+                  window.location.href = "/flowfix-capstone/Login/login.html";
 
     });
     loginLink.parentNode.insertBefore(logoutBtn, loginLink.nextSibling);
