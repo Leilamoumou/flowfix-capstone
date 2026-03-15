@@ -32,6 +32,10 @@ body {
 .main-nav a,
 .main-nav button {
   color: #fff;
+  padding: 8px 14px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
 }
 /* Buttons */
 .btn {
@@ -127,9 +131,9 @@ padding: 1.5rem;
     display: flex;
   }
   .main-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+    display: flex;
+    align-items: center;
+   gap: 8px;
   }
   .main-nav.open {
     display: flex;
