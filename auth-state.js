@@ -31,7 +31,7 @@ onAuthStateChanged(auth, async (user) => {
     const snap = await getDoc(doc(db, "users", user.uid));
     const role = snap.exists() ? snap.data().role : "customer";
     loginLink.textContent = "Profile";
-    loginLink.href = "/Profile/profile.html";
+    loginLink.href = ".../Profile/profile.html";
 
     //LOGOUT button
      if (!document.getElementById("logout-btn")) {
