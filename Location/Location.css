@@ -21,6 +21,7 @@ body {
     align-items: center; 
     justify-content: flex-end;
     gap: 15px;
+    font-weight: bold;
 }
 
 h1 {

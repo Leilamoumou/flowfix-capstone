@@ -17,6 +17,7 @@ body {
 .main-nav .btn,
 .main-nav a {
   color:black;
+  font-weight: bold;
 }
 
 h1 {
