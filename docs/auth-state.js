@@ -9,21 +9,19 @@ ENTAILS THE FOLLOWING:
 */
 //fix attempt to minimize module bug issues for login.
 import { getApps, initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
-const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
-
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
 import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "%%API_KEY%%",
-  authDomain: "%%AUTH_DOMAIN%%",
+  apiKey:    "%%API_KEY%%",
+  authDomain:"%%AUTH_DOMAIN%%",
   projectId: "flowfix-65fd1",
-  appId: "1:878384279716:web:041715c6ae2aa120b23631"
+  appId:     "1:878384279716:web:041715c6ae2aa120b23631"
 };
 
+const app  = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db   = getFirestore(app);
 
 onAuthStateChanged(auth, async (user) => {
   const loginLink = document.querySelector('a[href*="login.html"]');
