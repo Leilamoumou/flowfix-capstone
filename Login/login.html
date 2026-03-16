@@ -45,11 +45,14 @@
 
         <form id="auth-form">
           <label for="email">Email</label>
-<input type="email" id="email" autocomplete="email" placeholder="you@example.com" required />
+    <input type="email" id="email" autocomplete="email" placeholder="you@example.com" required />
 
 
           <label for="password">Password</label>
-<input type="password" id="password" autocomplete="current-password" placeholder="••••••••" required />
+      <input type="password" id="password" autocomplete="current-password" placeholder="••••••••" required />
+      <small id="password-hint" style="display:none; color:#555; font-size:0.82rem;">
+                   Must be at least 6 characters and contain an uppercase letter.
+            </small>
 
           <!-- Remember me + Forgot password row -->
           <div class="login-extras" id="extras-row">
@@ -117,6 +120,7 @@ const firebaseConfig = {
       const extrasRow   = document.getElementById("extras-row");
 
       const forgotLink  = document.getElementById("forgot-link");
+      
     // login toggle functionality
      switchBtn.addEventListener("click", () => {
 
@@ -129,6 +133,7 @@ const firebaseConfig = {
         switchBtn.textContent   = isSignUp ? "Log in" : "Sign up";
         // hide remember me option &  forgot password upon sign up site, only show on login
          extrasRow.style.display = isSignUp ? "none" : "flex";
+         document.getElementById("password-hint").style.display = isSignUp ? "block" : "none";
          //role selection toggle
          document.getElementById("role-select").style.display = isSignUp ? "flex" : "none";
         clearMessage();
@@ -222,9 +227,7 @@ if (!response.ok) {
           }
 
         } catch (error) {
-          //debug TO BE DELETED , temp
-          console.error("SIGNUP ERROR CODE:", error.code);
-          console.error("SIGNUP ERROR MESSAGE:", error.message);
+          
           showMessage(friendlyError(error.code), "error");
         }
       });
