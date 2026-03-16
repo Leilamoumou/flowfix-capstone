@@ -149,6 +149,7 @@ body {
     box-shadow: 0 16px 32px rgba(217,45,32,0.12);
 }
 
+
 /* BUTTON */
 .card-btn {
     margin-top: 20px;
@@ -166,6 +167,9 @@ body {
 }
 
 /* EMERGENCY BUTTON ONLY */
+.emergency-btn {
+  text-decoration: none;
+}
 .emergency-btn {
     background-color: #d92d20;
 }

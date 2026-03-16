@@ -110,6 +110,11 @@ body {
   box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
+.no-hover:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .card-title {
   margin: 0;
   font-size: 18px;
