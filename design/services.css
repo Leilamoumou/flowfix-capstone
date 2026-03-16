@@ -18,12 +18,12 @@ top: 0px;
 background: #FFFFFF;
 
 
-/* Log In Home Services Location FAQ Dashboard */
+/* Log In Home Services Location FAQ Dashboard Contact */
 
 position: absolute;
 width: 527px;
 height: 39px;
-left: 781px;
+left: 707px;
 top: 40px;
 
 font-family: 'Inria Sans';
@@ -1041,7 +1041,7 @@ color: #000000;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 137px;
@@ -1060,12 +1060,12 @@ color: #FF6B00;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 137px;
 height: 25px;
-left: 638px;
+left: 651px;
 top: 655px;
 
 font-family: 'Inria Sans';
@@ -1079,7 +1079,7 @@ color: #FF6B00;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 137px;
@@ -1193,7 +1193,7 @@ color: #000000;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 123px;
@@ -1212,7 +1212,7 @@ color: #FF6B00;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 122px;
@@ -1231,11 +1231,11 @@ color: #FF6B00;
 
 
 
-/* Learn More → */
+/* Book Now → */
 
 position: absolute;
 width: 122px;
-height: 11px;
+height: 24px;
 left: 1105px;
 top: 956px;
 
@@ -1244,6 +1244,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 20px;
 line-height: 24px;
+/* identical to box height */
 text-align: center;
 
 color: #FF6B00;
