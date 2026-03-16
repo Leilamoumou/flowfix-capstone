@@ -222,6 +222,9 @@ if (!response.ok) {
           }
 
         } catch (error) {
+          //debug TO BE DELETED , temp
+          console.error("SIGNUP ERROR CODE:", error.code);
+          console.error("SIGNUP ERROR MESSAGE:", error.message);
           showMessage(friendlyError(error.code), "error");
         }
       });
