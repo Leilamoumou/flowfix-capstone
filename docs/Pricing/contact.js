@@ -29,3 +29,26 @@ if (themeToggle)
     }
   });
 }
+
+// Auto-fill service type from pricing page
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service");
+
+if (service) {
+  const serviceSelect = document.getElementById("service");
+  if (serviceSelect) {
+    serviceSelect.value = service;
+  }
+}
+
+// Redirects user to the confirmation page after submitting the contact form
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      window.location.href = "confirmation.html";
+    });
+  }
+});
