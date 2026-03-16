@@ -26,32 +26,44 @@ const db   = getFirestore(app);
 onAuthStateChanged(auth, async (user) => {
   const loginLink = document.querySelector('a[href*="login.html"]');
   if (!loginLink) return;
-
+//role check update , include profile and dashboard
   if (user) {
     const snap = await getDoc(doc(db, "users", user.uid));
     const role = snap.exists() ? snap.data().role : "customer";
-    loginLink.textContent = "Profile";
-   loginLink.href = "/flowfix-capstone/Profile/profile.html"; 
+//user role to determine dashboardrouting
+    loginLink.textContent = "Dashboard";
+    loginLink.href = role === "plumber"
+      ? "/flowfix-capstone/Plumber-Dashboard/plumber-dashboard.html"
+      : "/flowfix-capstone/Customer-Dashboard/customer-dashboard.html";
 
+//profile link included
+  if (!document.getElementById("profile-link")) {
+      const profileLink = document.createElement("a");
+      profileLink.textContent = "Profile";
+      profileLink.id = "profile-link";
+      profileLink.href = "/flowfix-capstone/Profile/profile.html";
+      profileLink.className = "btn";
+      loginLink.parentNode.insertBefore(profileLink, loginLink.nextSibling);
+    }
 
     //LOGOUT button
-     if (!document.getElementById("logout-btn")) {
-          const logoutBtn = document.createElement("button");
-          logoutBtn.textContent = "Logout";
-          logoutBtn.id = "logout-btn";
-           logoutBtn.className = "btn";
-      
-           logoutBtn.addEventListener("click", async () => {
-               await signOut(auth);
-                  window.location.href = "/flowfix-capstone/Login/login.html";
+   if (!document.getElementById("logout-btn")) {
+      const logoutBtn = document.createElement("button");
+      logoutBtn.textContent = "Logout";
+      logoutBtn.id = "logout-btn";
+      logoutBtn.className = "btn";
+      logoutBtn.addEventListener("click", async () => {
+        await signOut(auth);
+        window.location.href = "/flowfix-capstone/Login/login.html";
+      });
+      loginLink.parentNode.insertBefore(logoutBtn, loginLink.nextSibling);
+    }
 
-    });
-    loginLink.parentNode.insertBefore(logoutBtn, loginLink.nextSibling);
-  } 
-}
+  }
   else {
-  loginLink.textContent = "Login";
-  const logoutBtn = document.getElementById("logout-btn");
-  if (logoutBtn) logoutBtn.remove();
+    loginLink.textContent = "Login";
+    loginLink.href = "/flowfix-capstone/Login/login.html";
+    document.getElementById("profile-link")?.remove();
+    document.getElementById("logout-btn")?.remove();
   }
 });
