@@ -1,0 +1,850 @@
+/* Contact */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+visibility: hidden;
+width: 1440px;
+height: 240px;
+left: 0px;
+top: 780px;
+
+background: #F5F5F5;
+
+
+/* Hero Rectangle  */
+
+position: absolute;
+width: 1440px;
+height: 240px;
+left: 0px;
+top: 80px;
+
+background: #0B1F3B;
+
+
+/* NavBar(group) */
+
+position: absolute;
+width: 1440px;
+height: 80px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+
+/* Log In Home Services Location FAQ Dashboard */
+
+position: absolute;
+width: 527px;
+height: 39px;
+left: 738px;
+top: 34px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #111111;
+
+
+
+/* FlowFix */
+
+position: absolute;
+width: 261px;
+height: 36px;
+left: 29px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency button  */
+
+position: absolute;
+width: 170px;
+height: 40px;
+left: 1150px;
+top: 20px;
+
+background: #FF6B00;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 8px;
+
+
+/* Emergency Help */
+
+position: absolute;
+width: 116px;
+height: 20px;
+left: 1177px;
+top: 30px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Get in Touch! */
+
+position: absolute;
+width: 346px;
+height: 56px;
+left: 547px;
+top: 173px;
+
+font-family: 'Inria Serif';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Tell us what you need — we’ll respond as soon as possible. */
+
+position: absolute;
+width: 426px;
+height: 19px;
+left: 483px;
+top: 242px;
+
+font-family: 'Inria Serif';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 19 */
+
+position: absolute;
+width: 780px;
+height: 620px;
+left: 113px;
+top: 360px;
+
+background: #F5F5F5;
+border-radius: 16px;
+
+
+/* Email* */
+
+position: absolute;
+width: 47px;
+height: 19px;
+left: 143px;
+top: 533px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Email* */
+
+position: absolute;
+width: 47px;
+height: 19px;
+left: 143px;
+top: 533px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* First name* */
+
+position: absolute;
+width: 82px;
+height: 19px;
+left: 148px;
+top: 449px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Rectangle 21 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 415px;
+height: 234px;
+left: 980px;
+top: 606px;
+
+background: #F5F5F5;
+border: 2px solid #E50A0A;
+border-radius: 16px;
+
+
+/* Rectangle 23 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 415px;
+height: 234px;
+left: 980px;
+top: 346px;
+
+background: #F5F5F5;
+border: 2px solid #E50A0A;
+border-radius: 16px;
+
+
+/* Text on a path */
+
+position: absolute;
+width: 415px;
+height: 234px;
+left: 980px;
+top: 348px;
+
+background: #E50A0A;
+border-radius: 16px;
+
+
+/* Rectangle 22 */
+
+position: absolute;
+width: 147px;
+height: 52px;
+left: 1015px;
+top: 760px;
+
+background: #E50A0A;
+border-radius: 12px;
+
+
+/* CALL NOW */
+
+position: absolute;
+width: 109px;
+height: 29px;
+left: 1034px;
+top: 771px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Emergency Service */
+
+position: absolute;
+width: 290px;
+height: 48px;
+left: 1043px;
+top: 646px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* For urgent leaks, flooding, or burst pipes: */
+
+position: absolute;
+width: 377px;
+height: 24px;
+left: 999px;
+top: 703px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Contact Info */
+
+position: absolute;
+width: 182px;
+height: 33px;
+left: 1017px;
+top: 363px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+
+color: #000000;
+
+
+
+/* Phone (555) 123-4567 */
+
+position: absolute;
+width: 381px;
+height: 30px;
+left: 995px;
+top: 410px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 377px;
+height: 0px;
+left: 999px;
+top: 440px;
+
+border: 1px solid #B3B7BF;
+
+
+/* Line 2 */
+
+position: absolute;
+width: 377px;
+height: 0px;
+left: 995px;
+top: 487px;
+
+border: 1px solid #B3B7BF;
+
+
+/* Line 3 */
+
+position: absolute;
+width: 377px;
+height: 0px;
+left: 999px;
+top: 537px;
+
+border: 1px solid #B3B7BF;
+
+
+/* Email support@flowfix.com */
+
+position: absolute;
+width: 377px;
+height: 34px;
+left: 999px;
+top: 453px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+
+
+
+/* Text on a path */
+
+position: absolute;
+width: 377px;
+height: 0px;
+left: 999px;
+top: 486.5px;
+
+background: #B3B7BF;
+
+
+/* Hours Mon–Sat, 8:00am–6:00pm */
+
+position: absolute;
+width: 369px;
+height: 24px;
+left: 999px;
+top: 501px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Send A Message */
+
+position: absolute;
+width: 152px;
+height: 23px;
+left: 148px;
+top: 375px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+
+
+
+/* For scheduling and general questions, use the form below. */
+
+position: absolute;
+width: 419px;
+height: 13px;
+left: 148px;
+top: 411px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Rectangle 24 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 292px;
+height: 39px;
+left: 148px;
+top: 473px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Rectangle 29 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 292px;
+height: 39px;
+left: 142px;
+top: 731px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Leak Detection */
+
+position: absolute;
+width: 106px;
+height: 19px;
+left: 179px;
+top: 743px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #83868A;
+
+
+
+/* Chevron down */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 396px;
+top: 743px;
+
+
+
+/* Icon */
+
+position: absolute;
+left: 25%;
+right: 25%;
+top: 37.5%;
+bottom: 37.5%;
+
+border: 1.6px solid #1E1E1E;
+
+
+/* Rectangle 25 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 292px;
+height: 39px;
+left: 532px;
+top: 473px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Rectangle 28 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 292px;
+height: 39px;
+left: 532px;
+top: 731px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Rectangle 26 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 681px;
+height: 39px;
+left: 143px;
+top: 557px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Rectangle 27 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 681px;
+height: 39px;
+left: 142px;
+top: 643px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Rectangle 30 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 737px;
+height: 150px;
+left: 134px;
+top: 816px;
+
+background: #F7F7F7;
+border: 1px solid #D1D5DB;
+border-radius: 16px;
+
+
+/* Last name* */
+
+position: absolute;
+width: 93px;
+height: 11px;
+left: 531px;
+top: 452px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Phone* */
+
+position: absolute;
+width: 75px;
+height: 19px;
+left: 148px;
+top: 614px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Service Type* */
+
+position: absolute;
+width: 102px;
+height: 19px;
+left: 148px;
+top: 706px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Preferred Contact* */
+
+position: absolute;
+width: 148px;
+height: 14px;
+left: 531px;
+top: 708px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Chevron down */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 789px;
+top: 743px;
+
+
+
+/* Icon */
+
+position: absolute;
+left: 25%;
+right: 25%;
+top: 37.5%;
+bottom: 37.5%;
+
+border: 1.6px solid #1E1E1E;
+
+
+/* Call */
+
+position: absolute;
+width: 47px;
+height: 26px;
+left: 573px;
+top: 738px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
+
+
+/* Message* */
+
+position: absolute;
+width: 98px;
+height: 18px;
+left: 148px;
+top: 788px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+
+
+/* Describe the issue . . . */
+
+position: absolute;
+width: 210px;
+height: 26px;
+left: 158px;
+top: 833px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
+
+
+/* First name */
+
+position: absolute;
+width: 141px;
+height: 15px;
+left: 179px;
+top: 481px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
+
+
+/* Last name */
+
+position: absolute;
+width: 154px;
+height: 23px;
+left: 566px;
+top: 481px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
+
+
+/* You@email.com */
+
+position: absolute;
+width: 201px;
+height: 26px;
+left: 187px;
+top: 564px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
+
+
+/* (555) 000-0000 */
+
+position: absolute;
+width: 197px;
+height: 13px;
+left: 186px;
+top: 651px;
+
+font-family: 'Inria Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #83868A;
+
