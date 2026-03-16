@@ -5,6 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FlowFix - Dashboard</title>
   <link rel="stylesheet" href="../style.css">
+  <!-- chat styling-->
+   <style>
+  .chat-panel {
+    display: none;
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 360px; height: 480px;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 24px rgba(30,58,95,0.18);
+    flex-direction: column;
+    z-index: 200;
+  }
+  .chat-panel.open { display: flex; }
+  .chat-panel-header {
+    background: #1e3a5f; color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 12px 12px 0 0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 700; font-size: 0.95rem;
+  }
+  .chat-panel-header button {
+    background: none; border: none; color: #fff;
+    font-size: 1.2rem; cursor: pointer;
+  }
+  .chat-messages-panel {
+    flex: 1; overflow-y: auto;
+    padding: 0.75rem 1rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    background: #f9fafb;
+  }
+  .msg-bubble {
+    max-width: 80%; padding: 0.5rem 0.75rem;
+    border-radius: 10px; font-size: 0.88rem; line-height: 1.4;
+  }
+  .msg-bubble.mine {
+    background: #1e3a5f; color: #fff;
+    align-self: flex-end; border-bottom-right-radius: 2px;
+  }
+  .msg-bubble.theirs {
+    background: #e5e7eb; color: #1e3a5f;
+    align-self: flex-start; border-bottom-left-radius: 2px;
+  }
+  .msg-meta { font-size: 0.72rem; color: #9ca3af; margin-top: 2px; text-align: right; }
+  .msg-meta.theirs { text-align: left; }
+  .chat-input-area {
+    display: flex; gap: 0.5rem; padding: 0.75rem;
+    border-top: 1px solid #e5e7eb; background: #fff;
+  }
+  .chat-input-area input {
+    flex: 1; padding: 0.5rem 0.75rem;
+    border: 1.5px solid #d1d5db; border-radius: 8px;
+    font-size: 0.9rem; font-family: 'Inria Sans', sans-serif; outline: none;
+  }
+  .chat-input-area input:focus { border-color: #1e3a5f; }
+  .chat-input-area button {
+    background: #f97316; color: #fff; border: none;
+    border-radius: 8px; padding: 0.5rem 1rem;
+    font-weight: 700; cursor: pointer; font-family: 'Inria Sans', sans-serif;
+  }
+  .btn-chat {
+    background: #1e3a5f; color: #fff; border: none;
+    border-radius: 6px; padding: 6px 14px;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    font-family: 'Inria Sans', sans-serif; margin-top: 0.5rem;
+  }
+  .btn-status {
+    background: #f97316; color: #fff; border: none;
+    border-radius: 6px; padding: 6px 14px;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    font-family: 'Inria Sans', sans-serif; margin-top: 0.5rem; margin-left: 0.5rem;
+  }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+</style>
 </head>
 <body>
   <header class="main-header">
@@ -64,7 +138,7 @@
     //imports & credentialss
 import { getApps, initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
-import { getFirestore, doc, getDoc, collection, addDoc, query, where, orderBy, getDocs } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+import { getFirestore, doc, getDoc, collection, addDoc, query, where, orderBy, getDocs, updateDoc, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey:    "AIzaSyCEeLF_HRy9s4UC_Har6OnzUjJj3Ig4cEw",
@@ -76,7 +150,8 @@ const firebaseConfig = {
 const app  = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db   = getFirestore(app);
-
+let unsubscribeChat = null;
+let activeChatRequestId = null;
 
 /*AUTH guard:
 Ensure those not signed in || not a user 
@@ -140,23 +215,114 @@ async function loadRequests(uid) {
       return;
     }
 
-    listEl.innerHTML = snapshot.docs.map(doc => {
-      const d = doc.data();
-      return `
-        <div class="request-card">
-          <p><strong>Issue:</strong> ${d.issueDescription}</p>
-          <p><strong>Status:</strong> <span class="status-${d.status}">${d.status}</span></p>
-          <p class="request-date">${d.createdAt?.toDate().toLocaleDateString()}</p>
-        </div>
-      `;
-    }).join("");
+  listEl.innerHTML = snapshot.docs.map(doc => {
+  const d = doc.data();
+  return `
+    <div class="request-card">
+      <p><strong>Issue:</strong> ${d.issueDescription}</p>
+      <p><strong>Status:</strong> <span class="status-${d.status}">${d.status}</span></p>
+      <p class="request-date">${d.createdAt?.toDate().toLocaleDateString()}</p>
+      ${d.plumberEmail ? `
+      <div class="card-actions">
+        <button class="btn-chat chat-btn"
+          data-id="${doc.id}"
+          data-customer="${d.plumberEmail}">
+          💬 Chat with Your Plumber
+        </button>
+      </div>` : ""}
+    </div>`;
+}).join("");
+
+
+document.querySelectorAll(".chat-btn").forEach(btn => {
+  btn.addEventListener("click", () =>
+    openChat(btn.dataset.id, btn.dataset.customer)
+  );
+});
+
   } catch (err) {
-      console.error("loadRequests error:", err); 
+    console.error("loadRequests error:", err);
     listEl.innerHTML = "<p>Failed to load requests.</p>";
+  }}
+
+
+function openChat(requestId, customerEmail) {
+  if (activeChatRequestId === requestId) {
+    document.getElementById("chat-input").focus();
+    return;
+  }
+  if (unsubscribeChat) unsubscribeChat();
+
+  activeChatRequestId = requestId;
+  document.getElementById("chat-title").textContent = `Chat — ${customerEmail}`;
+  document.getElementById("chat-panel").classList.add("open");
+  document.getElementById("chat-messages").innerHTML = "";
+
+  const q = query(
+    collection(db, "requests", requestId, "messages"),
+    orderBy("createdAt", "asc")
+  );
+
+  unsubscribeChat = onSnapshot(q, (snapshot) => {
+    const container = document.getElementById("chat-messages");
+    container.innerHTML = "";
+    const user = auth.currentUser;
+
+    snapshot.forEach(d => {
+      const msg = d.data();
+      const isMe = msg.senderUID === user.uid;
+      const time = msg.createdAt?.toDate().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      container.innerHTML += `
+        <div>
+          <div class="msg-bubble ${isMe ? "mine" : "theirs"}">${msg.text}</div>
+          <div class="msg-meta ${isMe ? "" : "theirs"}">${msg.senderEmail} · ${time ?? ""}</div>
+        </div>`;
+    });
+    container.scrollTop = container.scrollHeight;
+  });
+
+  document.getElementById("chat-input").focus();
+}
+
+async function sendMessage() {
+  const input = document.getElementById("chat-input");
+  const text = input.value.trim();
+  if (!text || !activeChatRequestId) return;
+  const user = auth.currentUser;
+  input.value = "";
+  try {
+    await addDoc(collection(db, "requests", activeChatRequestId, "messages"), {
+      text,
+      senderUID:   user.uid,
+      senderEmail: user.email,
+      createdAt:   serverTimestamp()
+    });
+  } catch (err) {
+    console.error("sendMessage error:", err);
   }
 }
+document.getElementById("chat-send").addEventListener("click", sendMessage);
+document.getElementById("chat-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
+document.getElementById("chat-close").addEventListener("click", () => {
+  document.getElementById("chat-panel").classList.remove("open");
+  if (unsubscribeChat) { unsubscribeChat(); unsubscribeChat = null; }
+  activeChatRequestId = null;
+});
   </script>
    <!-- @leilamoumou added auth-state to ensure users stay logged in every page-->
      <script type="module" src="../auth-state.js"></script>
+     <div class="chat-panel" id="chat-panel">
+  <div class="chat-panel-header">
+    <span id="chat-title">Chat</span>
+    <button id="chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-messages-panel" id="chat-messages"></div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Type a message..." />
+    <button id="chat-send">Send</button>
+  </div>
+</div>
 </body>
 </html>
