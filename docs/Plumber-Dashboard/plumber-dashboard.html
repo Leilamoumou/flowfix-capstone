@@ -5,6 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FlowFix - Dashboard</title>
   <link rel="stylesheet" href="../style.css">
+   <!-- Messaging for Accepted Requests Styling-->
+    <style>
+  .chat-panel {
+    display: none;
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 360px; height: 480px;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 24px rgba(30,58,95,0.18);
+    flex-direction: column;
+    z-index: 200;
+  }
+  .chat-panel.open { display: flex; }
+  .chat-panel-header {
+    background: #1e3a5f; color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 12px 12px 0 0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 700; font-size: 0.95rem;
+  }
+  .chat-panel-header button {
+    background: none; border: none; color: #fff;
+    font-size: 1.2rem; cursor: pointer;
+  }
+  .chat-messages-panel {
+    flex: 1; overflow-y: auto;
+    padding: 0.75rem 1rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    background: #f9fafb;
+  }
+  .msg-bubble {
+    max-width: 80%; padding: 0.5rem 0.75rem;
+    border-radius: 10px; font-size: 0.88rem; line-height: 1.4;
+  }
+  .msg-bubble.mine {
+    background: #1e3a5f; color: #fff;
+    align-self: flex-end; border-bottom-right-radius: 2px;
+  }
+  .msg-bubble.theirs {
+    background: #e5e7eb; color: #1e3a5f;
+    align-self: flex-start; border-bottom-left-radius: 2px;
+  }
+  .msg-meta { font-size: 0.72rem; color: #9ca3af; margin-top: 2px; text-align: right; }
+  .msg-meta.theirs { text-align: left; }
+  .chat-input-area {
+    display: flex; gap: 0.5rem; padding: 0.75rem;
+    border-top: 1px solid #e5e7eb; background: #fff;
+  }
+  .chat-input-area input {
+    flex: 1; padding: 0.5rem 0.75rem;
+    border: 1.5px solid #d1d5db; border-radius: 8px;
+    font-size: 0.9rem; font-family: 'Inria Sans', sans-serif; outline: none;
+  }
+  .chat-input-area input:focus { border-color: #1e3a5f; }
+  .chat-input-area button {
+    background: #f97316; color: #fff; border: none;
+    border-radius: 8px; padding: 0.5rem 1rem;
+    font-weight: 700; cursor: pointer; font-family: 'Inria Sans', sans-serif;
+  }
+  .btn-chat {
+    background: #1e3a5f; color: #fff; border: none;
+    border-radius: 6px; padding: 6px 14px;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    font-family: 'Inria Sans', sans-serif; margin-top: 0.5rem;
+  }
+  .btn-status {
+    background: #f97316; color: #fff; border: none;
+    border-radius: 6px; padding: 6px 14px;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    font-family: 'Inria Sans', sans-serif; margin-top: 0.5rem; margin-left: 0.5rem;
+  }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+</style>
 </head>
 <body>
   <header class="main-header">
@@ -30,7 +104,7 @@
   <section class="dashboard-section">
     <div class="dashboard-card">
 
-      <!-- Plumber profile View: Incorporating their accepted jobs vs. reqs -->
+      <!-- Accepted jobs / Incoming reqs -->
       <div class="dashboard-profile">
         <h2>Welcome back, <span id="user-email"></span></h2>
         <p class="role-badge">Plumber</p>
@@ -38,17 +112,27 @@
 
       <div class="dashboard-block">
   <h3>Open Requests</h3>
-  <div id="requests-list"><p>Loading...</p></div>
+  <div id="requests-list"><p>Fetching your requests...</p></div>
     </div>
 
 
 <div class="dashboard-block">
   <h3>Your Accepted Jobs</h3>
-  <div id="accepted-list"><p>Loading...</p></div>
+  <div id="accepted-list"><p>Fetching your requests...</p></div>
 </div>
   </div>
   </section>
-
+  <div class="chat-panel" id="chat-panel">
+  <div class="chat-panel-header">
+    <span id="chat-title">Chat</span>
+    <button id="chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-messages-panel" id="chat-messages"></div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Update your client here!" />
+    <button id="chat-send">Send</button>
+  </div>
+</div>
   <script src="../script.js"></script>
   <script type="module">
     // imports & logic  TODO @Leilamoumou
@@ -57,8 +141,8 @@
 //imports & credentials
 import { getApps, initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js';
-import { getFirestore, doc, getDoc, collection, query, where, orderBy, getDocs, updateDoc } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
-
+import { getFirestore, doc, getDoc, collection, query, where, orderBy, getDocs, updateDoc, addDoc, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
+import { runTransaction } from 'https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js';
 const firebaseConfig = {
   apiKey:    "%%API_KEY%%",
   authDomain:"%%AUTH_DOMAIN%%",
@@ -68,6 +152,9 @@ const firebaseConfig = {
 const app  = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db   = getFirestore(app);
+//chat vars
+let unsubscribeChat = null;
+let activeChatRequestId = null;
 
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
@@ -126,20 +213,40 @@ async function loadOpenRequests() {
     listEl.innerHTML = "<p>Failed to load requests.</p>";
   }
 }
-//If accepted,  provide req info + update open requests and jobs accepted list:
+//If accepted,  provide req info + update open requests and jobs accepted list. Also handles mutex,
+// 2 plumbers cannot accept the same job simultaneously.
 async function acceptJob(requestId) {
   const user = auth.currentUser;
+  const requestRef = doc(db, "requests", requestId);
+
   try {
-    await updateDoc(doc(db, "requests", requestId), {
-      status:      "accepted",
-      plumberUID:  user.uid,
-      plumberEmail: user.email
+    await runTransaction(db, async (transaction) => {
+      const requestDoc = await transaction.get(requestRef);
+
+      if (!requestDoc.exists()) {
+        throw new Error("Request no longer exists.");
+      }
+      if (requestDoc.data().status !== "open") {
+        throw new Error("already-taken");
+      }
+
+      transaction.update(requestRef, {
+        status:       "in-progress",
+        plumberUID:   user.uid,
+        plumberEmail: user.email
+      });
     });
-    // Refresh both lists rather than one
+
     loadOpenRequests();
     loadAcceptedJobs(user.uid);
+
   } catch (err) {
-    console.error("Failed to accept job, refresh and try again.", err);
+    if (err.message === "already-taken") {
+      alert("Sorry, another plumber just accepted this job.");
+      loadOpenRequests(); // refresh so the card  of the reqdisappears
+    } else {
+      console.error("acceptJob error:", err);
+    }
   }
 }
 //Accepted jobs loading
@@ -149,7 +256,6 @@ async function loadAcceptedJobs(uid) {
     const q = query(
       collection(db, "requests"),
       where("plumberUID", "==", uid),
-      where("status", "==", "accepted"),
       orderBy("createdAt", "desc")
     );
     const snapshot = await getDocs(q);
@@ -166,17 +272,111 @@ async function loadAcceptedJobs(uid) {
           <p><strong>Issue:</strong> ${data.issueDescription}</p>
           <p><strong>Customer:</strong> ${data.customerEmail}</p>
           <p class="request-date">${data.createdAt?.toDate().toLocaleDateString()}</p>
-          <span class="status-accepted">Accepted</span>
-        </div>
-      `;
+          <span class="status-${data.status}">${data.status}</span>
+          <div class="card-actions">
+            <button class="btn-chat chat-btn"
+              data-id="${d.id}"
+              data-customer="${data.customerEmail}">
+              💬 Chat with Customer
+            </button>
+            ${data.status === "in-progress" ? `
+            <button class="btn-status complete-btn" data-id="${d.id}">
+              Mark Complete
+            </button>` : ""}
+          </div>
+        </div>`;
     }).join("");
+
+    document.querySelectorAll(".chat-btn").forEach(btn => {
+      btn.addEventListener("click", () =>
+        openChat(btn.dataset.id, btn.dataset.customer)
+      );
+    });
+    document.querySelectorAll(".complete-btn").forEach(btn => {
+      btn.addEventListener("click", () => markComplete(btn.dataset.id, uid));
+    });
+
   } catch (err) {
-    listEl.innerHTML = "<p>Failed to load accepted jobs, please refresh to check the latest accepted jobs.</p>";
+    console.error("loadAcceptedJobs error:", err);
+    listEl.innerHTML = "<p>Failed to load accepted jobs.</p>";
+  }
+}
+//Complete job Status: 
+async function markComplete(requestId, uid) {
+  try {
+    await updateDoc(doc(db, "requests", requestId), { status: "completed" });
+    loadAcceptedJobs(uid);
+  } catch (err) {
+    console.error("markComplete error:", err);
   }
 }
 
-    
+//Chat handling
+function openChat(requestId, customerEmail) {
+  if (activeChatRequestId === requestId) {
+    document.getElementById("chat-input").focus();
+    return;
+  }
+  if (unsubscribeChat) unsubscribeChat();
 
+  activeChatRequestId = requestId;
+  document.getElementById("chat-title").textContent = `Chat — ${customerEmail}`;
+  document.getElementById("chat-panel").classList.add("open");
+  document.getElementById("chat-messages").innerHTML = "";
+
+  const q = query(
+    collection(db, "requests", requestId, "messages"),
+    orderBy("createdAt", "asc")
+  );   
+  unsubscribeChat = onSnapshot(q, (snapshot) => {
+    const container = document.getElementById("chat-messages");
+    container.innerHTML = "";
+    const user = auth.currentUser;
+
+    snapshot.forEach(d => {
+      const msg = d.data();
+      const isMe = msg.senderUID === user.uid;
+      const time = msg.createdAt?.toDate().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      container.innerHTML += `
+        <div>
+          <div class="msg-bubble ${isMe ? "mine" : "theirs"}">${msg.text}</div>
+          <div class="msg-meta ${isMe ? "" : "theirs"}">${msg.senderEmail} · ${time ?? ""}</div>
+        </div>`;
+    });
+    container.scrollTop = container.scrollHeight;
+  });
+
+  document.getElementById("chat-input").focus();
+}
+//message sending
+async function sendMessage() {
+  const input = document.getElementById("chat-input");
+  const text = input.value.trim();
+  //only if reqID corresponds with an accept && accepted job
+  if (!text || !activeChatRequestId) return;
+  const user = auth.currentUser;
+  input.value = "";
+  try {
+    await addDoc(collection(db, "requests", activeChatRequestId, "messages"), {
+      text,
+      senderUID:   user.uid,
+      senderEmail: user.email,
+      createdAt:   serverTimestamp()
+    });
+  } catch (err) {
+    console.error("sendMessage error:", err);
+  }
+}
+
+document.getElementById("chat-send").addEventListener("click", sendMessage);
+document.getElementById("chat-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
+document.getElementById("chat-close").addEventListener("click", () => {
+  document.getElementById("chat-panel").classList.remove("open");
+  if (unsubscribeChat) { unsubscribeChat(); unsubscribeChat = null; }
+  activeChatRequestId = null;
+});
     </script>
      <!-- @leilamoumou added auth-state to ensure users stay logged in every page-->
      <script type="module" src="../auth-state.js"></script>
