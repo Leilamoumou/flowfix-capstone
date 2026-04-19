@@ -63,7 +63,8 @@ app.get('/profile', verifyToken, async (req, res) => {
 //basic matching w/o ai api integration to allow users a choice to be matched by whoever
 // is most aligned && picks up the job first
 app.post('/match-plumber', verifyToken, async (req, res) => {
-  const { jobType } = req.body;
+  try{
+    const { jobType } = req.body;
 
   // fetching all plumbers
   const snapshot = await db.collection('users')
@@ -82,6 +83,10 @@ app.post('/match-plumber', verifyToken, async (req, res) => {
 
   // return the first match, ai integration will best match
   res.json(result[0] || null);
+ } 
+ catch (error) {
+    res.status(500).json({ error: 'Matching failed.' });
+  }
 });
 
 // Server start
