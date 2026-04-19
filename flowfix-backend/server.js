@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const admin = require('firebase-admin');
 const dotenv = require('dotenv');
-const SPECIALTIES = require('./chatbot-data/specialties'); 
 
 dotenv.config();
 
