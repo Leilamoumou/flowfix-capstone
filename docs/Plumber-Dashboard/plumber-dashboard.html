@@ -106,7 +106,7 @@
 
       <!-- Accepted jobs / Incoming reqs -->
       <div class="dashboard-profile">
-        <h2>Welcome back, <span id="user-email"></span></h2>
+        <h2>Welcome back, <span id="username"></span></h2>
         <p class="role-badge">Plumber</p>
       </div>
 
@@ -168,7 +168,7 @@ onAuthStateChanged(auth, async (user) => {
     window.location.href = "../Customer-Dashboard/customer-dashboard.html";
     return;
   }
-  document.getElementById("user-email").textContent = user.email;
+document.getElementById("username").textContent = snap.data().name || user.email;
 
   loadOpenRequests();
   loadAcceptedJobs(user.uid);
