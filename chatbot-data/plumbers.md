@@ -1,10 +1,12 @@
 # Plumber Directory
 
-TO DO - add data/information on each of the plumbers (we will have an estimate of 5 or more plumbers)
+# TO DO
+- Add data/information on each of the plumbers (we will have an estimate of 5 or more plumbers) 
+- We currently have data for 1 plumber
 
-some information we will include:
-- plumber name
-- plumber ID 
-- experience level (beginner, intermediate, professional, etc)
-- primary skills / specialization
-- Bio / Description
+## Jason Rivera
+- **Plumber ID:** Plumber 001
+- **Specialties:** Leak Repair, Pipe Replacement, Water Heater
+- **Availability:** True
+- **Rating:** 4.8
+- **Location:** Brooklyn, NY
