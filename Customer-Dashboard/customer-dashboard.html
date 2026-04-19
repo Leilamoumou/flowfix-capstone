@@ -186,7 +186,8 @@ const snap = await getDoc(doc(db, "users", user.uid));
     return;
   }
   //Populate profile and load requests:
-    document.getElementById("user-email").textContent = user.email;
+    document.getElementById("username").textContent = snap.data().name || user.email;
+
 
       loadRequests(user.uid);
 
