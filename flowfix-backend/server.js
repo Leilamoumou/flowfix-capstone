@@ -60,6 +60,30 @@ app.get('/profile', verifyToken, async (req, res) => {
   }
 });
 
+//basic matching w/o ai api integration to allow users a choice to be matched by whoever
+// is most aligned && picks up the job first
+app.post('/match-plumber', verifyToken, async (req, res) => {
+  const { jobType } = req.body;
+
+  // fetching all plumbers
+  const snapshot = await db.collection('users')
+    .where('role', '==', 'plumber')
+    .get();
+
+  const plumbers = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+//specialty as priority for searching
+  const matched = plumbers.filter(p =>
+    p.specialties && p.specialties.includes(jobType)
+  );
+
+// if no specialty match, allow any plumber to accept the job
+  const result = matched.length > 0 ? matched : plumbers;
+
+  // return the first match, ai integration will best match
+  res.json(result[0] || null);
+});
+
 // Server start
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
