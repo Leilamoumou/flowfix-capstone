@@ -106,18 +106,34 @@
 
       <!-- Customer profile View: -->
       <div class="dashboard-profile">
-        <h2>Welcome back, <span id="user-email"></span></h2>
+        <h2>Welcome back, <span id="username"></span></h2>
         <p class="role-badge">Customer</p>
       </div>
 
-      <!-- Book a Plumber  -->
+        <!-- Book a Plumber  -->
       <div class="dashboard-block">
         <h3>Book a Plumber</h3>
         <div id="book-message"></div>
         <form id="book-form">
-          <label for="issue">Describe your issue as well as its location in your home so that we can properly assist you.</label>
-          <textarea id="issue" rows="4" placeholder="e.g. pi" required></textarea>
+
+      <div class="form-group">
+  <label for="job-type">Type of Job</label>
+  <select id="job-type" required>
+    <option value="">-- Select a specialty --</option>
+    <option value="Leak Repair">Leak Repair</option>
+    <option value="Pipe Replacement">Pipe Replacement</option>
+    <option value="Drain Cleaning">Drain Cleaning</option>
+    <option value="Water Heater">Water Heater</option>
+    <option value="Toilet Repair">Toilet Repair</option>
+    <option value="Sewer Line">Sewer Line</option>
+    <option value="Emergency Service">Emergency Service</option>
+  </select>
+</div>
+
+          <label for="issue">Describe your issue.</label>
+          <textarea id="issue" rows="4" placeholder="e.g. flood" required></textarea>
           <button type="submit" class="btn-primary">Submit Request</button>
+          
         </form>
       </div>
 
@@ -176,17 +192,21 @@ const snap = await getDoc(doc(db, "users", user.uid));
 
 //Job booking form submission
 document.getElementById("book-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const issue = document.getElementById("issue").value.trim();
-    const msgEl = document.getElementById("book-message");
+  e.preventDefault();
+  const jobType = document.getElementById("job-type").value;
+  const issue = document.getElementById("issue").value.trim();
+  const msgEl = document.getElementById("book-message");
+    
 
     try {
       await addDoc(collection(db, "requests"), {
         customerEmail: user.email,
         customerUID:   user.uid,
         issueDescription: issue,
+        jobType: document.getElementById('job-type').value,
         status:        "open",
         createdAt:     new Date()
+        
       });
       //@Leilamoumou might reword this message?
       msgEl.textContent = "Request submitted successfully. A status update will be posted shortly on your dashboard.";
