@@ -1,0 +1,8 @@
+{
+  "id": "plumber_001",
+  "name": "Jason Rivera",
+  "specialties": ["Leak Repair", "Pipe Replacement", "Water Heater"],
+  "availability": true,
+  "rating": 4.8,
+  "location": "Brooklyn, NY"
+}
