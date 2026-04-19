@@ -64,4 +64,4 @@ If the customer's issue is not identified, categorize the issue as "Other / Not 
 
 4. **Location:** Confirm the customer's address and ensure that it is within the New York City area (since that is the area that FlowFix provides services).
 
-5. **Time Slot:** Offer available time slots to the customer. FlowFix operates 24/7.
+5. **Time Slot:** Offer available time slots to the customer. FlowFix operates 24/7. Refer to availability_schedule.md to determine which time slot is suggested to the customer.
