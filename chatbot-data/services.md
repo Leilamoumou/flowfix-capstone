@@ -44,3 +44,24 @@ To ensure that the AI provides accurate guidance/support to the customer, the fo
 * **Construction:** No tiling, flooring, or drywall repair after a leak is fixed.
 
 > **Note to Agent:** If a customer asks for these services, politely inform them that we specialize exclusively in plumbing and suggest they contact a licensed specialist in those fields.
+
+## Agent Chat Protocol (Data Extraction)
+To successfully schedule an appointment, the agent must collect the following "Required Fields" through the conversation with the customer:
+
+1. **Urgency:** Determine if it is an emergency or non-emergency request.
+2. **The Issue:** A brief description of the plumbing problem/issue that the customer is facing.
+3. **Service Category:** Map the issue to one of the services above.
+
+Based off of the customer's response, the agent should categorize the issue into one of the categories:
+- Leak Detection
+- Drain Cleaning
+- Pipe Installation
+- Bathroom & Fixtures Installation
+- Water Heater Services
+- Emergency
+
+If the customer's issue is not identified, categorize the issue as "Other / Not Sure" and proceed to capture free-text description and ask the customer to clarify if needed.
+
+4. **Location:** Confirm the customer's address and ensure that it is within the New York City area (since that is the area that FlowFix provides services).
+
+5. **Time Slot:** Offer available time slots to the customer. FlowFix operates 24/7.
