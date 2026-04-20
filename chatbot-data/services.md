@@ -30,6 +30,12 @@ The following services can be booked through the standard scheduling flow.
 - **Urgency Level:** High
 - **Description:** Repair, maintenance, or installation of traditional and tankless water heaters.
 
+### Sewer Line Services
+- **Starting Price:** $3,000
+- **Urgency Level:** High
+- **Description:** Comprehensive repair or full replacement of the main sewer line connecting the property to the municipal system. Our sewer line service includes diagnostic camera inspection, excavation, and/or relining.
+- **Instructions:** If the customer indicates multiple clogged drains throughout their house or sewage backup, prioritize this service. This involves critical infrastructure repair.
+
 ## Emergency Services
 ### Immediate Help / Emergency Dispatch
 - **Starting Price:** $250
@@ -58,6 +64,7 @@ Based off of the customer's response, the agent should categorize the issue into
 - Pipe Installation
 - Bathroom & Fixtures Installation
 - Water Heater Services
+- Sewer Line
 - Emergency
 
 If the customer's issue is not identified, categorize the issue as "Other / Not Sure" and proceed to capture free-text description and ask the customer to clarify if needed.
