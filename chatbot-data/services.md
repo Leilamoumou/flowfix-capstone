@@ -62,10 +62,11 @@ Based off of the customer's response, the agent should categorize the issue into
 - Leak Detection
 - Drain Cleaning
 - Pipe Installation
-- Bathroom & Fixtures Installation
+- Bathroom & Fixtures (Installation & Repair)
 - Water Heater Services
 - Sewer Line
 - Emergency
+- Water-related
 
 If the customer's issue is not identified, categorize the issue as "Other / Not Sure" and proceed to capture free-text description and ask the customer to clarify if needed.
 
