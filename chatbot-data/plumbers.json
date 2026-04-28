@@ -1,8 +1,46 @@
-{
-  "id": "plumber_001",
-  "name": "Jason Rivera",
-  "specialties": ["Leak Repair", "Pipe Replacement", "Water Heater"],
-  "availability": true,
-  "rating": 4.8,
-  "location": "Brooklyn, NY"
-}
+[
+  {
+    "id": "plumber_001",
+    "name": "Jason Rivera",
+    "specialties": ["Leak Repair", "Pipe Replacement", "Water Heater"],
+    "availability": true,
+    "rating": 4.8,
+    "location": "Brooklyn, NY"
+  },
+
+  {
+    "id": "plumber_002",
+    "name": "Sam Smith",
+    "specialties": ["Sewer Line", "Pipe Replacement", "Water Heater"],
+    "availability": true,
+    "rating": 4.6,
+    "location": "Manhattan, NY"
+  },
+
+  {
+    "id": "plumber_003",
+    "name": "Mark Greene",
+    "specialties": ["Leak Repair", "Pipe Replacement", "Drain Cleaning", "Sewer Line"],
+    "availability": true,
+    "rating": 4.2,
+    "location": "Queens, NY"
+  },
+
+  {
+    "id": "plumber_004",
+    "name": "Austin Lin",
+    "specialties": ["Leak Repair", "Pipe Replacement"],
+    "availability": true,
+    "rating": 4.3,
+    "location": "Staten Island, NY"
+  },
+
+  {
+    "id": "plumber_005",
+    "name": "Ricky Adams",
+    "specialties": ["Sewer Line", "Pipe Replacement", "Bathroom & Fixtures"],
+    "availability": true,
+    "rating": 4.3,
+    "location": "The Bronx, NY"
+  }
+]
