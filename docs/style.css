@@ -179,6 +179,7 @@ padding: 1.5rem;
   display: block;
   object-fit: contain;
 }
+
 /* Styling for Emergency Button */
 .btn-emergency {
   background-color: #ff8c00;
