@@ -1,8 +1,6 @@
 # Plumber Directory
 
-# TO DO
-- Add data/information on each of the plumbers (we will have an estimate of 5 or more plumbers) 
-- We currently have data for 1 plumber
+This document contains plumber information such as their ID, specialties, availability, rating, and location.
 
 ## Jason Rivera
 - **Plumber ID:** Plumber 001
