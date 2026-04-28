@@ -179,17 +179,17 @@ padding: 1.5rem;
   display: block;
   object-fit: contain;
 }
-/* Emergency button styling */
+/* Styling for Emergency Button */
 .btn-emergency {
-  background-color: #f97316;
-  color: white;
-  border: 3px solid #fff;
-  padding: 12px 24px;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 15px;  /* Rounded Edges */
   font-weight: bold;
-  font-size: 1rem;
-  border-radius: 4px;
   text-decoration: none;
-  display: inline-block;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 2px 5px 0 rgba (0, 0, 0, 0.15);
+  color: white !important;
+  padding: 10px;
 }
 
 .btn-emergency:hover {
