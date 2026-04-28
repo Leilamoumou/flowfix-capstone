@@ -79,6 +79,12 @@ padding: 1.5rem;
   border: 1px solid #731919;
   border-radius: 8px;
 }
+
+[data-theme="dark"] .service-card {
+  padding: 1.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+  }
 /* Chatbot style, will implement functionality later in js */
 .chat-bubble {
  position: fixed;
@@ -341,7 +347,7 @@ padding: 1.5rem;
 
 /*dark mode toggle */
 [data-theme="dark"] body {
-  background: #121212 !important;
+  background: #1e3a5f !important;
   color: #f0f0f0 !important;
 }
 /* USER DASHBOARD STYLING */
