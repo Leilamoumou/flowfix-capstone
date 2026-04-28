@@ -29,13 +29,20 @@ body {
   color: #fff;
   margin: 0;
 }
+
+/* Navigation Bar background color */
+.main-header {
+  background-color: white;
+}
+
 .main-nav a,
 .main-nav button {
-  color: #fff;
+  color: black;
   padding: 8px 14px;
   font-size: 1rem;
   display: inline-flex;
   align-items: center;
+  font-weight: bold;
 }
 /* Buttons */
 .btn {
@@ -52,6 +59,15 @@ body {
 [data-theme="dark"] .main-header {
   background:  #0f1f33;
 }
+
+[data-theme="dark"] a {
+  color:white;
+}
+
+[data-theme="dark"] .login-section {
+  background-color: #193455;
+}
+
 /* SERVICES GRID STYLE */
 .services-grid {
   display: grid;
