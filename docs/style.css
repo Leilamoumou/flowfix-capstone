@@ -390,6 +390,11 @@ padding: 1.5rem;
   cursor: pointer;
 }
 
+/* Dark Mode Modal */
+[data-theme="dark"] .modal p {
+  color: black;
+}
+
 /* USER DASHBOARD STYLING */
 .dashboard-section {
   min-height: 100vh;
